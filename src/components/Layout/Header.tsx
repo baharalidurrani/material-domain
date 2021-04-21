@@ -4,16 +4,19 @@ import IconButton from "@material-ui/core/IconButton";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import { useAppDispatch } from "../../app-redux/hooks";
-import { toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
+import { themeTypeAction, toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
 import { DRAWER_WIDTH } from "./SideNav";
 import Slide from "@material-ui/core/Slide";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
+      flexGrow: 1,
       [theme.breakpoints.up("md")]: {
         width: `calc(100% - ${DRAWER_WIDTH}px)`,
         marginLeft: DRAWER_WIDTH,
@@ -25,6 +28,9 @@ const useStyles = makeStyles((theme: Theme) =>
         display: "none",
       },
     },
+    title: {
+      flexGrow: 1,
+    },
   })
 );
 
@@ -32,6 +38,12 @@ export function Header() {
   const dispatch = useAppDispatch();
   const classes = useStyles();
   const trigger = useScrollTrigger();
+
+  const isDarkTheme = useTheme().palette.type === "dark";
+  const toggleTheme = () => {
+    dispatch(themeTypeAction(isDarkTheme ? "light" : "dark"));
+  };
+
   return (
     <Slide appear={false} direction="down" in={!trigger}>
       <AppBar position="fixed" className={classes.appBar}>
@@ -45,9 +57,12 @@ export function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
+          <Typography variant="h6" noWrap className={classes.title}>
             Bahar Ali (Dürrani)
           </Typography>
+          <IconButton color="inherit" onClick={toggleTheme}>
+            {isDarkTheme ? <BrightnessHighIcon /> : <Brightness4Icon />}
+          </IconButton>
         </Toolbar>
       </AppBar>
     </Slide>
