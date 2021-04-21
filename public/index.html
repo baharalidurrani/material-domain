@@ -2,20 +2,25 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon/favicon.ico" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/favicon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/favicon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/favicon/favicon-16x16.png" />
+    <link rel="mask-icon" href="%PUBLIC_URL%/favicon/safari-pinned-tab.svg" color="#c51162" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#c51162" />
+    <meta name="msapplication-config" content="%PUBLIC_URL%/favicon/browserconfig.xml" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <!-- <meta name="theme-color" content="#c51162" /> -->
+    <meta name="theme-color" content="#c51162" />
     <meta
       name="Software Engineer Bahar Ali Durrani - Web App Developer | Mobile App Developer"
       content="Web site created using create-react-app"
     />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
     <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -30,10 +35,24 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
     />
-    <link
-      rel="stylesheet"
-      href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/8.4.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-auth.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-database.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-firestore.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-functions.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-messaging.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-storage.js"></script> -->
+    <script defer src="/__/firebase/8.4.1/firebase-analytics.js"></script>
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-remote-config.js"></script> -->
+    <!-- <script defer src="/__/firebase/8.4.1/firebase-performance.js"></script> -->
+    <!-- 
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
@@ -48,5 +67,24 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.firestore().doc('/foo/bar').get().then(() => { });
+        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        firebase.analytics(); // call to activate
+        // firebase.analytics().logEvent('tutorial_completed');
+        // firebase.performance(); // call to activate
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+      });
+    </script>
   </body>
 </html>
