@@ -43,7 +43,7 @@ export function Header() {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" noWrap>
-          Responsive drawer
+          Bahar Ali (Dürrani)
         </Typography>
       </Toolbar>
     </AppBar>

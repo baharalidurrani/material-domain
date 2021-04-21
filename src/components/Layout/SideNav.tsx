@@ -31,10 +31,8 @@ export function SideNav() {
 
   return (
     <nav className={classes.drawer} aria-label="mailbox folders">
-      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
       <Hidden mdUp implementation="js">
         <Drawer
-          // container={container}
           id="temp-mobile-drawer"
           variant="temporary"
           anchor="left"
