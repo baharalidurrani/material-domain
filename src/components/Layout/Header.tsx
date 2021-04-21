@@ -5,6 +5,8 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import MenuIcon from "@material-ui/icons/Menu";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { useAppDispatch } from "../../app-redux/hooks";
+import { toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
 
 const drawerWidth = 240;
 
@@ -26,6 +28,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export function Header() {
+  const dispatch = useAppDispatch();
   const classes = useStyles();
 
   return (
@@ -35,7 +38,7 @@ export function Header() {
           color="inherit"
           aria-label="open drawer"
           edge="start"
-        //   onClick={handleDrawerToggle}
+          onClick={() => dispatch(toggleMobileDrawerAction())}
           className={classes.menuButton}
         >
           <MenuIcon />

@@ -1,5 +1,5 @@
 import React from "react";
-import { NavDrawer } from "./components/NavDrawer/NavDrawer";
+import { Layout } from "./components/Layout/Layout";
 import { AppRouting } from "./routes/AppRouting";
 import { CustomMuiTheme } from "./theme/CustomMuiTheme";
 
@@ -7,7 +7,7 @@ function App() {
   return (
     <CustomMuiTheme>
       {/* <AppRouting /> */}
-      <NavDrawer />
+      <Layout />
     </CustomMuiTheme>
   );
 }
