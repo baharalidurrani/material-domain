@@ -7,7 +7,7 @@ import ListItemText from "@material-ui/core/ListItemText";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { DRAWER_WIDTH } from "./SideNav";
 import { ROUTES } from "../../routes/routes";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useAppDispatch } from "../../app-redux/hooks";
 import { openDrawerAction } from "../../app-redux/settings/settingsSlice";
 
@@ -33,8 +33,10 @@ export function MyDrawer() {
           <ListItem
             button
             key={i}
-            component={Link}
+            component={NavLink}
             to={route.path}
+            activeClassName="Mui-selected"
+            exact
             onClick={() => dispatch(openDrawerAction(false))}
           >
             <ListItemIcon>
