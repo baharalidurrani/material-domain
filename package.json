@@ -24,7 +24,7 @@
   "scripts": {
     "start": "react-scripts start",
     "starts": "HTTPS=true SSL_CRT_FILE=~/localhost+1.pem SSL_KEY_FILE=~/localhost+1-key.pem react-scripts start",
-    "format": "prettier --write \"**/*.+(ts|tsx|css|md)\"",
+    "pretty": "prettier --write \"**/*.+(ts|tsx|css|md)\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
