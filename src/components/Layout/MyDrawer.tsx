@@ -4,8 +4,6 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { DRAWER_WIDTH } from "./SideNav";
 import { ROUTES } from "../../routes/routes";
@@ -39,7 +37,9 @@ export function MyDrawer() {
             to={route.path}
             onClick={() => dispatch(openDrawerAction(false))}
           >
-            <ListItemIcon>{i % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+            <ListItemIcon>
+              <route.icon />
+            </ListItemIcon>
             <ListItemText primary={route.name} />
           </ListItem>
         ))}
