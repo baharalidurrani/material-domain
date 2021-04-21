@@ -9,17 +9,17 @@ import {
   toggleMobileDrawerAction,
 } from "../../app-redux/settings/settingsSlice";
 
-const drawerWidth = 240;
+export const DRAWER_WIDTH = 240;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     drawer: {
       [theme.breakpoints.up("sm")]: {
-        width: drawerWidth,
+        width: DRAWER_WIDTH,
         flexShrink: 0,
       },
     },
     drawerPaper: {
-      width: drawerWidth,
+      width: DRAWER_WIDTH,
     },
   })
 );

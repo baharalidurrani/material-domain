@@ -7,15 +7,14 @@ import ListItemText from "@material-ui/core/ListItemText";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
 import MailIcon from "@material-ui/icons/Mail";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { DRAWER_WIDTH } from "./SideNav";
 
-//todo duplicate
-const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
     drawerPaper: {
-      width: drawerWidth,
+      width: DRAWER_WIDTH,
     },
   })
 );

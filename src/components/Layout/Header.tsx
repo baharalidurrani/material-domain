@@ -7,15 +7,14 @@ import MenuIcon from "@material-ui/icons/Menu";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useAppDispatch } from "../../app-redux/hooks";
 import { toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
-
-const drawerWidth = 240;
+import { DRAWER_WIDTH } from "./SideNav";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
       [theme.breakpoints.up("sm")]: {
-        width: `calc(100% - ${drawerWidth}px)`,
-        marginLeft: drawerWidth,
+        width: `calc(100% - ${DRAWER_WIDTH}px)`,
+        marginLeft: DRAWER_WIDTH,
       },
     },
     menuButton: {
