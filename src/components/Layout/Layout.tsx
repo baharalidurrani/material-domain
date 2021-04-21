@@ -31,8 +31,9 @@ export function Layout(props: Props) {
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Switch>
-          {ROUTES.map((route) => (
+          {ROUTES.map((route, i) => (
             <Route
+              key={i}
               exact={Boolean(route.path === "/")}
               path={route.path}
               component={route.component}
