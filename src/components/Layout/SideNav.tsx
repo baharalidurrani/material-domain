@@ -1,19 +1,23 @@
 import React from "react";
-import Divider from "@material-ui/core/Divider";
-import List from "@material-ui/core/List";
-import ListItem from "@material-ui/core/ListItem";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
-import ListItemText from "@material-ui/core/ListItemText";
-import InboxIcon from "@material-ui/icons/MoveToInbox";
-import MailIcon from "@material-ui/icons/Mail";
+import Drawer from "@material-ui/core/Drawer";
+import Hidden from "@material-ui/core/Hidden";
+import { MyDrawer } from "./MyDrawer";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import { useAppDispatch, useAppSelector } from "../../app-redux/hooks";
+import {
+  selectMobileDrawer,
+  toggleMobileDrawerAction,
+} from "../../app-redux/settings/settingsSlice";
 
-//todo duplicate
 const drawerWidth = 240;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
-    // necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
+    drawer: {
+      [theme.breakpoints.up("sm")]: {
+        width: drawerWidth,
+        flexShrink: 0,
+      },
+    },
     drawerPaper: {
       width: drawerWidth,
     },
@@ -22,44 +26,40 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export function SideNav() {
   const classes = useStyles();
+  const dispatch = useAppDispatch();
+  const mobileOpen = useAppSelector(selectMobileDrawer);
+
   return (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
-      <List>
-        {[
-          "Inbox",
-          "Starred",
-          "Send email",
-          "Drafts",
-          "Inbox",
-          "Starred",
-          "Send email",
-          "Drafts",
-          "Inbox",
-          "Starred",
-          "Send email",
-          "Drafts",
-          "Inbox",
-          "Starred",
-          "Send email",
-          "Drafts",
-        ].map((text, index) => (
-          <ListItem button key={index + "one"}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-      <List>
-        {["All mail", "Trash", "Spam"].map((text, index) => (
-          <ListItem button key={index + "two"}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
-        ))}
-      </List>
-    </div>
+    <nav className={classes.drawer} aria-label="mailbox folders">
+      {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
+      <Hidden smUp implementation="js">
+        <Drawer
+          // container={container}
+          variant="temporary"
+          anchor="left"
+          open={mobileOpen}
+          onClose={() => dispatch(toggleMobileDrawerAction())}
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          ModalProps={{
+            keepMounted: true, // Better open performance on mobile.
+          }}
+        >
+          <MyDrawer />
+        </Drawer>
+      </Hidden>
+      <Hidden xsDown implementation="js">
+        <Drawer
+          classes={{
+            paper: classes.drawerPaper,
+          }}
+          variant="permanent"
+          open
+        >
+          <MyDrawer />
+        </Drawer>
+      </Hidden>
+    </nav>
   );
 }

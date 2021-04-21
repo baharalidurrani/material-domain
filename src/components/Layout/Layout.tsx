@@ -1,34 +1,17 @@
 import React from "react";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import Typography from "@material-ui/core/Typography";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import { SideNav } from "./SideNav";
+import Typography from "@material-ui/core/Typography";
 import { Header } from "./Header";
-import { useAppDispatch, useAppSelector } from "../../app-redux/hooks";
-import {
-  selectMobileDrawer,
-  toggleMobileDrawerAction,
-} from "../../app-redux/settings/settingsSlice";
-
-const drawerWidth = 240;
+import { SideNav } from "./SideNav";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       display: "flex",
     },
-    drawer: {
-      [theme.breakpoints.up("sm")]: {
-        width: drawerWidth,
-        flexShrink: 0,
-      },
-    },
+
     // necessary for content to be below app bar
     toolbar: theme.mixins.toolbar,
-    drawerPaper: {
-      width: drawerWidth,
-    },
     content: {
       flexGrow: 1,
       padding: theme.spacing(3),
@@ -39,44 +22,12 @@ const useStyles = makeStyles((theme: Theme) =>
 interface Props {}
 
 export function Layout(props: Props) {
-  const dispatch = useAppDispatch();
-  const mobileOpen = useAppSelector(selectMobileDrawer);
   const classes = useStyles();
 
   return (
     <div className={classes.root}>
       <Header />
-      <nav className={classes.drawer} aria-label="mailbox folders">
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Hidden smUp implementation="js">
-          <Drawer
-            // container={container}
-            variant="temporary"
-            anchor="left"
-            open={mobileOpen}
-            onClose={() => dispatch(toggleMobileDrawerAction())}
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            ModalProps={{
-              keepMounted: true, // Better open performance on mobile.
-            }}
-          >
-            <SideNav />
-          </Drawer>
-        </Hidden>
-        <Hidden xsDown implementation="css">
-          <Drawer
-            classes={{
-              paper: classes.drawerPaper,
-            }}
-            variant="permanent"
-            open
-          >
-            <SideNav />
-          </Drawer>
-        </Hidden>
-      </nav>
+      <SideNav />
       <main className={classes.content}>
         <div className={classes.toolbar} />
         <Typography paragraph>
