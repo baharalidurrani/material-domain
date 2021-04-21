@@ -1,27 +1,21 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo } from "react";
 import { CssBaseline, useMediaQuery } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { customTheme } from "./customTheme";
+import { useAppSelector, useAppDispatch } from "../app-redux/hooks";
+import { selectType, themeTypeAction } from "../app-redux/theme/themeSlice";
 
-type ThemeStateType = null | "light" | "dark";
 interface Props {
   children: React.ReactNode;
-  themeState: ThemeStateType;
 }
 export function CustomMuiTheme(props: Props) {
-  const [goDarkState, setGoDarkState] = useState<ThemeStateType>(
-    props.themeState
-  );
-  useEffect(() => {
-    console.log("props.themeState changed to:", props.themeState);
-    setGoDarkState(props.themeState);
-  }, [props.themeState]);
+  const dispatch = useAppDispatch();
+  const goDarkState = useAppSelector(selectType);
 
   const goDarkQuery = useMediaQuery("(prefers-color-scheme: dark)");
   useEffect(() => {
-    console.log("goDarkQuery changed to:", goDarkQuery);
-    setGoDarkState(null);
-  }, [goDarkQuery]);
+    dispatch(themeTypeAction(null));
+  }, [dispatch, goDarkQuery]);
 
   const theme = useMemo(
     () =>
