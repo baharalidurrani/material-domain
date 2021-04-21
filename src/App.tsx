@@ -6,8 +6,8 @@ import { CustomMuiTheme } from "./theme/CustomMuiTheme";
 function App() {
   return (
     <CustomMuiTheme>
-      <AppRouting />
-      {/* <NavDrawer /> */}
+      {/* <AppRouting /> */}
+      <NavDrawer />
     </CustomMuiTheme>
   );
 }
