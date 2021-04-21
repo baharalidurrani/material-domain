@@ -1,11 +1,11 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
 import counterReducer from "../features/counter/counterSlice";
-import { themeSlice } from "./theme/themeSlice";
+import { settingsSlice } from "./settings/settingsSlice";
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    theme: themeSlice.reducer,
+    settings: settingsSlice.reducer,
   },
 });
 

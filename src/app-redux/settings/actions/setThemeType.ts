@@ -1,5 +1,5 @@
 import { PayloadAction } from "@reduxjs/toolkit";
-import { ThemeState, ThemeType } from "../themeSlice";
+import { ThemeState, ThemeType } from "../settingsSlice";
 
 /**
  * Don't use directly, instead use `themeTypeAction` from the corresponding slice/reduce file

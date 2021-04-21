@@ -3,14 +3,17 @@ import { CssBaseline, useMediaQuery } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
 import { customTheme } from "./customTheme";
 import { useAppSelector, useAppDispatch } from "../app-redux/hooks";
-import { selectType, themeTypeAction } from "../app-redux/theme/themeSlice";
+import {
+  selectThemeType,
+  themeTypeAction,
+} from "../app-redux/settings/settingsSlice";
 
 interface Props {
   children: React.ReactNode;
 }
 export function CustomMuiTheme(props: Props) {
   const dispatch = useAppDispatch();
-  const goDarkState = useAppSelector(selectType);
+  const goDarkState = useAppSelector(selectThemeType);
 
   const goDarkQuery = useMediaQuery("(prefers-color-scheme: dark)");
   useEffect(() => {
