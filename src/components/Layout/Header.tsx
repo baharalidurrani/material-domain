@@ -8,6 +8,8 @@ import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useAppDispatch } from "../../app-redux/hooks";
 import { toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
 import { DRAWER_WIDTH } from "./SideNav";
+import Slide from "@material-ui/core/Slide";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -29,23 +31,25 @@ const useStyles = makeStyles((theme: Theme) =>
 export function Header() {
   const dispatch = useAppDispatch();
   const classes = useStyles();
-
+  const trigger = useScrollTrigger();
   return (
-    <AppBar position="fixed" className={classes.appBar}>
-      <Toolbar>
-        <IconButton
-          color="inherit"
-          aria-label="open drawer"
-          edge="start"
-          onClick={() => dispatch(toggleMobileDrawerAction())}
-          className={classes.menuButton}
-        >
-          <MenuIcon />
-        </IconButton>
-        <Typography variant="h6" noWrap>
-          Bahar Ali (Dürrani)
-        </Typography>
-      </Toolbar>
-    </AppBar>
+    <Slide appear={false} direction="down" in={!trigger}>
+      <AppBar position="fixed" className={classes.appBar}>
+        <Toolbar>
+          <IconButton
+            color="inherit"
+            aria-label="open drawer"
+            edge="start"
+            onClick={() => dispatch(toggleMobileDrawerAction())}
+            className={classes.menuButton}
+          >
+            <MenuIcon />
+          </IconButton>
+          <Typography variant="h6" noWrap>
+            Bahar Ali (Dürrani)
+          </Typography>
+        </Toolbar>
+      </AppBar>
+    </Slide>
   );
 }
