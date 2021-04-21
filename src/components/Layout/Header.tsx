@@ -12,14 +12,14 @@ import { DRAWER_WIDTH } from "./SideNav";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     appBar: {
-      [theme.breakpoints.up("sm")]: {
+      [theme.breakpoints.up("md")]: {
         width: `calc(100% - ${DRAWER_WIDTH}px)`,
         marginLeft: DRAWER_WIDTH,
       },
     },
     menuButton: {
       marginRight: theme.spacing(2),
-      [theme.breakpoints.up("sm")]: {
+      [theme.breakpoints.up("md")]: {
         display: "none",
       },
     },

@@ -13,7 +13,7 @@ export const DRAWER_WIDTH = 240;
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     drawer: {
-      [theme.breakpoints.up("sm")]: {
+      [theme.breakpoints.up("md")]: {
         width: DRAWER_WIDTH,
         flexShrink: 0,
       },
@@ -32,9 +32,10 @@ export function SideNav() {
   return (
     <nav className={classes.drawer} aria-label="mailbox folders">
       {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-      <Hidden smUp implementation="js">
+      <Hidden mdUp implementation="js">
         <Drawer
           // container={container}
+          id="temp-mobile-drawer"
           variant="temporary"
           anchor="left"
           open={mobileOpen}
@@ -49,8 +50,9 @@ export function SideNav() {
           <MyDrawer />
         </Drawer>
       </Hidden>
-      <Hidden xsDown implementation="js">
+      <Hidden smDown implementation="js">
         <Drawer
+          id="permanent-desktop-drawer"
           classes={{
             paper: classes.drawerPaper,
           }}
