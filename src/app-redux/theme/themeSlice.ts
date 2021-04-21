@@ -1,7 +1,8 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 import { RootState } from "../store";
+import { setThemeType } from "./actions/setThemeType";
 
-type ThemeType = null | "light" | "dark";
+export type ThemeType = null | "light" | "dark";
 
 export interface ThemeState {
   themeType: ThemeType;
@@ -17,13 +18,11 @@ export const themeSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     // Use the PayloadAction type to declare the contents of `action.payload`
-    setThemeType: (state, action: PayloadAction<ThemeType>) => {
-      state.themeType = action.payload;
-    },
+    themeTypeAction: setThemeType,
   },
 });
 
-export const { setThemeType } = themeSlice.actions;
+export const { themeTypeAction } = themeSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of
