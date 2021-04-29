@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export function MyDrawer() {
+export function DrawerContent() {
   const dispatch = useAppDispatch();
   const classes = useStyles();
   return (

@@ -7,7 +7,7 @@ import {
   selectMobileDrawer,
   toggleMobileDrawerAction,
 } from "../../app-redux/settings/settingsSlice";
-import { MyDrawer } from "./MyDrawer";
+import { DrawerContent } from "./DrawerContent";
 
 export const DRAWER_WIDTH = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -45,7 +45,7 @@ export function SideNav() {
             keepMounted: true, // Better open performance on mobile.
           }}
         >
-          <MyDrawer />
+          <DrawerContent />
         </Drawer>
       </Hidden>
       <Hidden smDown implementation="js">
@@ -57,7 +57,7 @@ export function SideNav() {
           variant="permanent"
           open
         >
-          <MyDrawer />
+          <DrawerContent />
         </Drawer>
       </Hidden>
     </nav>
