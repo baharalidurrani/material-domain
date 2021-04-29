@@ -1,13 +1,13 @@
 import React from "react";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
-import { MyDrawer } from "./MyDrawer";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useAppDispatch, useAppSelector } from "../../app-redux/hooks";
 import {
   selectMobileDrawer,
   toggleMobileDrawerAction,
 } from "../../app-redux/settings/settingsSlice";
+import { DrawerContent } from "./DrawerContent";
 
 export const DRAWER_WIDTH = 240;
 const useStyles = makeStyles((theme: Theme) =>
@@ -27,6 +27,11 @@ const useStyles = makeStyles((theme: Theme) =>
 export function SideNav() {
   const classes = useStyles();
   const dispatch = useAppDispatch();
+
+  // If using material-ui theme mediaQuery
+  // const theme = useTheme();
+  // const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+
   const mobileOpen = useAppSelector(selectMobileDrawer);
 
   return (
@@ -45,10 +50,10 @@ export function SideNav() {
             keepMounted: true, // Better open performance on mobile.
           }}
         >
-          <MyDrawer />
+          <DrawerContent />
         </Drawer>
       </Hidden>
-      <Hidden smDown implementation="js">
+      <Hidden smDown implementation="css">
         <Drawer
           id="permanent-desktop-drawer"
           classes={{
@@ -57,7 +62,7 @@ export function SideNav() {
           variant="permanent"
           open
         >
-          <MyDrawer />
+          <DrawerContent />
         </Drawer>
       </Hidden>
     </nav>

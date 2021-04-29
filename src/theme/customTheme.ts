@@ -1,6 +1,6 @@
-import { ThemeOptions } from "@material-ui/core/styles";
-import purple from "@material-ui/core/colors/purple";
 import green from "@material-ui/core/colors/green";
+import purple from "@material-ui/core/colors/purple";
+import { ThemeOptions } from "@material-ui/core/styles";
 
 export const customTheme: ThemeOptions = {
   palette: {

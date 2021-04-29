@@ -1,17 +1,17 @@
 import React from "react";
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
+import Slide from "@material-ui/core/Slide";
+import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
+import useScrollTrigger from "@material-ui/core/useScrollTrigger";
+import Brightness4Icon from "@material-ui/icons/Brightness4";
+import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
 import MenuIcon from "@material-ui/icons/Menu";
-import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles";
 import { useAppDispatch } from "../../app-redux/hooks";
 import { themeTypeAction, toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
 import { DRAWER_WIDTH } from "./SideNav";
-import Slide from "@material-ui/core/Slide";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

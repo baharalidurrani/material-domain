@@ -1,15 +1,15 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
-import { DRAWER_WIDTH } from "./SideNav";
-import { ROUTES } from "../../routes/routes";
-import { NavLink } from "react-router-dom";
 import { useAppDispatch } from "../../app-redux/hooks";
 import { openDrawerAction } from "../../app-redux/settings/settingsSlice";
+import { ROUTES } from "../../routes/routes";
+import { DRAWER_WIDTH } from "./SideNav";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export function MyDrawer() {
+export function DrawerContent() {
   const dispatch = useAppDispatch();
   const classes = useStyles();
   return (
