@@ -1,13 +1,13 @@
 import React from "react";
 import Drawer from "@material-ui/core/Drawer";
 import Hidden from "@material-ui/core/Hidden";
-import { MyDrawer } from "./MyDrawer";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
 import { useAppDispatch, useAppSelector } from "../../app-redux/hooks";
 import {
   selectMobileDrawer,
   toggleMobileDrawerAction,
 } from "../../app-redux/settings/settingsSlice";
+import { MyDrawer } from "./MyDrawer";
 
 export const DRAWER_WIDTH = 240;
 const useStyles = makeStyles((theme: Theme) =>

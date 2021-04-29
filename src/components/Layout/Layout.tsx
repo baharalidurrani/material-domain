@@ -1,9 +1,9 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
+import { ROUTES } from "../../routes/routes";
 import { Header } from "./Header";
 import { SideNav } from "./SideNav";
-import { Route, Switch } from "react-router-dom";
-import { ROUTES } from "../../routes/routes";
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({

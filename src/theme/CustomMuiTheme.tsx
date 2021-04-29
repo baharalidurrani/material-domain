@@ -1,9 +1,9 @@
 import React, { useEffect, useMemo } from "react";
 import { CssBaseline, useMediaQuery } from "@material-ui/core";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import { customTheme } from "./customTheme";
 import { useAppSelector, useAppDispatch } from "../app-redux/hooks";
 import { selectThemeType, themeTypeAction } from "../app-redux/settings/settingsSlice";
+import { customTheme } from "./customTheme";
 
 interface Props {
   children: React.ReactNode;
