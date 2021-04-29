@@ -27,6 +27,11 @@ const useStyles = makeStyles((theme: Theme) =>
 export function SideNav() {
   const classes = useStyles();
   const dispatch = useAppDispatch();
+
+  // If using material-ui theme mediaQuery
+  // const theme = useTheme();
+  // const mdUp = useMediaQuery(theme.breakpoints.up("md"));
+
   const mobileOpen = useAppSelector(selectMobileDrawer);
 
   return (
@@ -48,7 +53,7 @@ export function SideNav() {
           <DrawerContent />
         </Drawer>
       </Hidden>
-      <Hidden smDown implementation="js">
+      <Hidden smDown implementation="css">
         <Drawer
           id="permanent-desktop-drawer"
           classes={{
