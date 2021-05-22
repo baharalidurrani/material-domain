@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-// import { Layout } from "src/components/layout/Layout";
+import { AppLayout } from "src/components/layout/AppLayout";
 import { PlaceholderRoute } from "./placeholder.routes";
 
 export function PlaceholderModule() {
@@ -8,7 +8,7 @@ export function PlaceholderModule() {
   const match = useRouteMatch();
 
   return (
-    <>
+    <AppLayout>
       <h2>Placeholder Module</h2>
       <ul>
         <li>
@@ -27,6 +27,6 @@ export function PlaceholderModule() {
         <Route path={match.url} exact component={() => <h3>placeholder root</h3>} />
         <Redirect to={{ pathname: match.path }} />
       </Switch>
-    </>
+    </AppLayout>
   );
 }

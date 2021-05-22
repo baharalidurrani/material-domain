@@ -21,7 +21,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export function Layout(props: Props) {
+export function AppLayout(props: Props) {
   const classes = useStyles();
 
   return (
