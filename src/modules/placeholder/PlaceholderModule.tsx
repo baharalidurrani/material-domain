@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Redirect, Route, Switch, useRouteMatch } from "react-router-dom";
-import { AppLayout } from "src/components/layout/AppLayout";
+import { AppLayout } from "src/components/appLayout/AppLayout";
 import { PlaceholderRoute } from "./placeholder.routes";
 
 export function PlaceholderModule() {
