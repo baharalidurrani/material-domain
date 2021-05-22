@@ -1,19 +1,5 @@
-import FavoriteIcon from "@material-ui/icons/Favorite";
-import HomeIcon from "@material-ui/icons/Home";
-import InfoIcon from "@material-ui/icons/Info";
-import NewReleasesIcon from "@material-ui/icons/NewReleases";
-import { About } from "../components/About/About";
-import { Contact } from "../components/Contact/Contact";
-import { Home } from "../components/Home/Home";
-import { Interests } from "../components/Interests/Interests";
-import { LongText } from "../components/Placeholder/LongText";
-import { Skills } from "../components/Skills/Skills";
+import { AuthRoute } from "src/modules/auth/auth.routes";
+import { HomeRoute } from "src/modules/home/home.routes";
+import { PlaceholderRoute } from "src/modules/placeholder/placeholder.routes";
 
-export const ROUTES = [
-  { name: "Home", path: "/", component: Home, icon: HomeIcon },
-  { name: "Skills", path: "/skills", component: Skills, icon: FavoriteIcon },
-  { name: "Interests", path: "/interests", component: Interests, icon: NewReleasesIcon },
-  { name: "Contact", path: "/contact", component: Contact, icon: NewReleasesIcon },
-  { name: "Long Text", path: "/long", component: LongText, icon: NewReleasesIcon },
-  { name: "About", path: "/about", component: About, icon: InfoIcon },
-];
+export const ROUTES = [AuthRoute, PlaceholderRoute, HomeRoute];

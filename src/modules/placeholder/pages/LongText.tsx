@@ -1,9 +1,14 @@
 import React from "react";
+import Container from "@material-ui/core/Container";
 import Typography from "@material-ui/core/Typography";
 
 export function LongText() {
   return (
-    <>
+    <Container>
+      <Typography variant="h1" align="center">
+        Long Text
+      </Typography>
+
       <Typography paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
         labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum facilisis leo
@@ -82,6 +87,6 @@ export function LongText() {
         Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas accumsan lacus
         vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
       </Typography>
-    </>
+    </Container>
   );
 }

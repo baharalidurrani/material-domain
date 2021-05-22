@@ -1,4 +1,5 @@
 import React from "react";
+import { useHistory } from "react-router";
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import Slide from "@material-ui/core/Slide";
@@ -8,9 +9,10 @@ import Typography from "@material-ui/core/Typography";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Brightness4Icon from "@material-ui/icons/Brightness4";
 import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
+import LockOpenIcon from "@material-ui/icons/LockOpen";
 import MenuIcon from "@material-ui/icons/Menu";
-import { useAppDispatch } from "../../app-redux/hooks";
-import { themeTypeAction, toggleMobileDrawerAction } from "../../app-redux/settings/settingsSlice";
+import { useAppDispatch } from "src/app-redux/hooks";
+import { themeTypeAction, toggleMobileDrawerAction } from "src/app-redux/settings/settingsSlice";
 import { DRAWER_WIDTH } from "./SideNav";
 
 const useStyles = makeStyles((theme: Theme) =>
@@ -36,6 +38,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export function Header() {
+  const history = useHistory();
   const dispatch = useAppDispatch();
   const classes = useStyles();
   const trigger = useScrollTrigger();
@@ -63,6 +66,15 @@ export function Header() {
           </Typography>
           <IconButton color="inherit" onClick={toggleTheme}>
             {isDarkTheme ? <BrightnessHighIcon /> : <Brightness4Icon />}
+          </IconButton>
+          <IconButton
+            color="inherit"
+            onClick={() => {
+              localStorage.removeItem("TOKEN");
+              history.push("/auth/login");
+            }}
+          >
+            <LockOpenIcon />
           </IconButton>
         </Toolbar>
       </AppBar>

@@ -1,7 +1,5 @@
 import React from "react";
-import { Route, Switch } from "react-router-dom";
 import { makeStyles, Theme, createStyles } from "@material-ui/core/styles";
-import { ROUTES } from "../../routes/routes";
 import { Header } from "./Header";
 import { SideNav } from "./SideNav";
 
@@ -19,7 +17,9 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-interface Props {}
+interface Props {
+  children: React.ReactNode;
+}
 
 export function Layout(props: Props) {
   const classes = useStyles();
@@ -30,16 +30,7 @@ export function Layout(props: Props) {
       <SideNav />
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Switch>
-          {ROUTES.map((route, i) => (
-            <Route
-              key={i}
-              exact={Boolean(route.path === "/")}
-              path={route.path}
-              component={route.component}
-            />
-          ))}
-        </Switch>
+        {props.children}
       </main>
     </div>
   );
