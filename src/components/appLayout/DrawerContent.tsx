@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { NavLink, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Grid } from "@material-ui/core";
 import Collapse from "@material-ui/core/Collapse";
-import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -18,7 +18,8 @@ import { DRAWER_WIDTH } from "./SideNav";
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     // necessary for content to be below app bar
-    toolbar: theme.mixins.toolbar,
+    // toolbar: theme.mixins.toolbar,
+    logo: { width: DRAWER_WIDTH - 50, marginTop: theme.spacing(2), marginBottom: theme.spacing(2) },
     drawerPaper: {
       width: DRAWER_WIDTH,
     },
@@ -39,9 +40,12 @@ export function DrawerContent() {
   }, [location]);
 
   return (
-    <div>
-      <div className={classes.toolbar} />
-      <Divider />
+    <>
+      <Grid container direction="row" justify="space-around" alignItems="center">
+        <Link to="/">
+          <img className={classes.logo} src="/favicon/android-chrome-512x512.png" alt="logo" />
+        </Link>
+      </Grid>
       <List>
         {ROUTES.map((route, i) => (
           <div key={i}>
@@ -102,7 +106,6 @@ export function DrawerContent() {
           </div>
         ))}
       </List>
-      <Divider />
-    </div>
+    </>
   );
 }

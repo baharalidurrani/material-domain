@@ -1,5 +1,6 @@
 import React from "react";
 // import { useHistory } from "react-router";
+import { Link } from "react-router-dom";
 import AppBar from "@material-ui/core/AppBar";
 import IconButton from "@material-ui/core/IconButton";
 import Slide from "@material-ui/core/Slide";
@@ -33,6 +34,8 @@ const useStyles = makeStyles((theme: Theme) =>
     title: {
       flexGrow: 1,
       textAlign: "center",
+      textDecoration: "none",
+      color: "unset",
     },
   })
 );
@@ -61,7 +64,7 @@ export function Header() {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap className={classes.title}>
+          <Typography variant="h6" noWrap className={classes.title} component={Link} to="/">
             Bahar Ali (Dürrani)
           </Typography>
           <IconButton color="inherit" onClick={toggleTheme}>
