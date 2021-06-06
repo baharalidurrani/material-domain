@@ -1,12 +1,12 @@
-import HomeIcon from "@material-ui/icons/Home";
+import BuildIcon from "@material-ui/icons/Build";
 import { IRoute } from "src/common/typings/routes";
-import { HomeModule } from "./HomeModule";
+import { SkillsModule } from "./SkillsModule";
 
-export const HomeRoute: IRoute = {
-  title: "Home",
-  path: "/home",
-  icon: HomeIcon,
-  component: HomeModule,
+export const SkillsRoute: IRoute = {
+  title: "Skills",
+  path: "/skills",
+  icon: BuildIcon,
+  component: SkillsModule,
   // subRoutes: [
   //   { icon: InfoIcon, component: HomePage1, path: "/page1", title: "Home Page 1" },
   //   { icon: NewReleasesIcon, component: HomePage2, path: "/page2", title: "Home Page 2" },
