@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { NavLink, useRouteMatch } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { NavLink, useLocation } from "react-router-dom";
 import Collapse from "@material-ui/core/Collapse";
 import Divider from "@material-ui/core/Divider";
 import List from "@material-ui/core/List";
@@ -30,10 +30,13 @@ const useStyles = makeStyles((theme: Theme) =>
 
 export function DrawerContent() {
   const classes = useStyles();
-  const match = useRouteMatch();
   const dispatch = useAppDispatch();
 
-  const [expand, setExpand] = useState<string | undefined>(match.path);
+  const location = useLocation();
+  const [expand, setExpand] = useState<string | undefined>(location.pathname);
+  useEffect(() => {
+    setExpand(location.pathname);
+  }, [location]);
 
   return (
     <div>
@@ -50,7 +53,7 @@ export function DrawerContent() {
               onClick={() => {
                 // props.history.push(item.url);
                 if (route.subRoutes?.length)
-                  if (expand === route.path) setExpand(undefined);
+                  if (expand?.includes(route.path)) setExpand(undefined);
                   else setExpand(route.path);
                 dispatch(openDrawerAction(false));
               }}
@@ -62,7 +65,7 @@ export function DrawerContent() {
                 <Typography>{route.title}</Typography>
               </ListItemText>
               {route.subRoutes?.length ? (
-                expand === route.path ? (
+                expand?.includes(route.path) ? (
                   <ExpandLess />
                 ) : (
                   <ExpandMore />
@@ -72,7 +75,12 @@ export function DrawerContent() {
               )}
             </ListItem>
             {route.subRoutes?.map((sub, j) => (
-              <Collapse key={`${i},${j}`} in={expand === route.path} timeout="auto" unmountOnExit>
+              <Collapse
+                key={`${i},${j}`}
+                in={expand?.includes(route.path)}
+                timeout="auto"
+                unmountOnExit
+              >
                 <List component="div" disablePadding>
                   <ListItem
                     button
