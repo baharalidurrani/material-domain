@@ -6,7 +6,7 @@ import { AuthModule } from "./AuthModule";
 import { LoginPage, RegisterPage } from "./pages";
 
 export const AuthRoute: IRoute = {
-  title: "Auth Module",
+  title: "Authentication",
   path: "/auth",
   icon: HomeIcon,
   component: AuthModule,

@@ -12,4 +12,9 @@ export const customTheme: ThemeOptions = {
       main: green[500],
     },
   },
+  // typography: {
+  //   fontFamily: '"Inter", "Arial", sans-serif',
+  //   fontSize: 12,
+  //   button: { textTransform: "none" },
+  // },
 };

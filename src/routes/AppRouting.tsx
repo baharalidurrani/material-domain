@@ -21,10 +21,10 @@ export function AppRouting() {
           </Route>
         ))}
 
-        <Route path="/" exact>
+        {/* <Route path="/" exact>
           <h1>root</h1>
-        </Route>
-        <Redirect to={{ pathname: "/" }} />
+        </Route> */}
+        <Redirect to={{ pathname: "/home" }} />
       </Switch>
     </BrowserRouter>
   );
