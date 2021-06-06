@@ -6,11 +6,11 @@ import { Counter, LongText } from "./pages";
 import { PlaceholderModule } from "./PlaceholderModule";
 
 export const PlaceholderRoute: IRoute = {
-  title: "Placeholder Module",
+  title: "Placeholder",
   path: "/placeholder",
   icon: NewReleasesIcon,
   component: PlaceholderModule,
-  guard: true,
+  // guard: true,
   subRoutes: [
     { icon: InfoIcon, component: LongText, path: "/long", title: "Long Text" },
     { icon: ExtensionOutlinedIcon, component: Counter, path: "/counter", title: "Redux Counter" },
