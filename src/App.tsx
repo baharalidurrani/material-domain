@@ -1,16 +1,14 @@
 import React from "react";
-import { Layout } from "./components/Layout/Layout";
 import { AppRouting } from "./routes/AppRouting";
 import { CustomMuiTheme } from "./theme/CustomMuiTheme";
 
-function App() {
+type Props = {};
+
+export function App({}: Props): React.ReactElement {
+  console.log("App Rendered 🚀🚀🚀");
   return (
     <CustomMuiTheme>
-      <AppRouting>
-        <Layout />
-      </AppRouting>
+      <AppRouting />
     </CustomMuiTheme>
   );
 }
-
-export default App;
