@@ -34,10 +34,11 @@ export function DrawerContent() {
   const dispatch = useAppDispatch();
 
   const location = useLocation();
-  const [expand, setExpand] = useState<string | undefined>(location.pathname);
+  const [expand, setExpand] = useState<string>(location.pathname);
   useEffect(() => {
     setExpand(location.pathname);
-  }, [location]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return (
     <>
@@ -55,9 +56,8 @@ export function DrawerContent() {
               to={route.path}
               activeClassName="Mui-selected"
               onClick={() => {
-                // props.history.push(item.url);
                 if (route.subRoutes?.length)
-                  if (expand?.includes(route.path)) setExpand(undefined);
+                  if (expand.includes(route.path)) setExpand("");
                   else setExpand(route.path);
                 dispatch(openDrawerAction(false));
               }}

@@ -2,7 +2,9 @@ import React from "react";
 import { AppRouting } from "./routes/AppRouting";
 import { CustomMuiTheme } from "./theme/CustomMuiTheme";
 
-function App() {
+type Props = {};
+
+export function App({}: Props): React.ReactElement {
   console.log("App Rendered 🚀🚀🚀");
   return (
     <CustomMuiTheme>
@@ -10,5 +12,3 @@ function App() {
     </CustomMuiTheme>
   );
 }
-
-export default App;
