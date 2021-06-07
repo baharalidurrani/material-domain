@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
-import App from "./App";
+import { App } from "./App";
 import { store } from "./app-redux/store";
 
 test("renders the word root", () => {
@@ -10,5 +10,5 @@ test("renders the word root", () => {
       <App />
     </Provider>
   );
-  expect(getAllByText(/root/i)[0]).toBeInTheDocument();
+  expect(getAllByText(/bahar/i)[0]).toBeInTheDocument();
 });
