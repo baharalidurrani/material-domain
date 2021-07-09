@@ -6,6 +6,7 @@ type Props = {};
 
 export function AboutModule({}: Props): React.ReactElement {
   console.log("AboutModule Rendered");
+
   return (
     <Container>
       <Typography variant="h1" align="center">
