@@ -67,12 +67,18 @@ export function Header() {
           </Typography>
           <IconButton
             href="https://github.com/baharalidurrani/material-domain"
+            aria-label="Link to Bahar's GitHub"
             target="_blank"
             color="inherit"
+            rel="noopener"
           >
             <GitHubIcon />
           </IconButton>
-          <IconButton color="inherit" onClick={toggleTheme}>
+          <IconButton
+            color="inherit"
+            onClick={toggleTheme}
+            aria-label="Switch between Light and Dark Theme"
+          >
             {isDarkTheme ? <BrightnessHighIcon /> : <Brightness4Icon />}
           </IconButton>
         </Toolbar>
