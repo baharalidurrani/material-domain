@@ -7,6 +7,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Tooltip from "@material-ui/core/Tooltip";
 import Typography from "@material-ui/core/Typography";
 import ExpandLess from "@material-ui/icons/ExpandLess";
 import ExpandMore from "@material-ui/icons/ExpandMore";
@@ -48,9 +49,15 @@ export function DrawerContent() {
   return (
     <>
       <Grid container direction="row" justify="space-around" alignItems="center">
-        <Link to="/">
-          <img className={classes.logo} src="/favicon/android-chrome-512x512.png" alt="logo" />
-        </Link>
+        <Tooltip
+          placement="right"
+          title="Tribute to GNU and Free Software Foundation"
+          aria-label="gnu tribute"
+        >
+          <Link to="/">
+            <img className={classes.logo} src="/favicon/android-chrome-512x512.png" alt="logo" />
+          </Link>
+        </Tooltip>
       </Grid>
       <List>
         {ROUTES.map((route, i) => (
