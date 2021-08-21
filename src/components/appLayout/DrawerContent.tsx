@@ -48,7 +48,7 @@ export function DrawerContent() {
 
   return (
     <>
-      <Grid container direction="row" justify="space-around" alignItems="center">
+      <Grid container direction="row" justifyContent="space-around" alignItems="center">
         <Tooltip
           placement="right"
           title="Tribute to GNU and Free Software Foundation"

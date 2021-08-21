@@ -30,7 +30,7 @@ export function Counter() {
       </Typography>
 
       <Box m={10}>
-        <Grid container direction="row" justify="space-evenly" alignItems="center">
+        <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
           <Grid item>
             <IconButton
               color="primary"
@@ -54,7 +54,7 @@ export function Counter() {
           </Grid>
         </Grid>
       </Box>
-      <Grid container direction="row" justify="space-evenly" alignItems="center">
+      <Grid container direction="row" justifyContent="space-evenly" alignItems="center">
         <TextField
           type="number"
           size="small"
