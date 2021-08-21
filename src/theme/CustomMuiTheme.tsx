@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from "react";
 import { CssBaseline, useMediaQuery } from "@material-ui/core";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createTheme, ThemeProvider } from "@material-ui/core/styles";
 import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
 import { selectThemeType, themeTypeAction } from "src/app-redux/settings/settingsSlice";
 import { customTheme } from "./customTheme";
@@ -19,7 +19,7 @@ export function CustomMuiTheme(props: Props) {
 
   const theme = useMemo(
     () =>
-      createMuiTheme({
+      createTheme({
         ...customTheme,
         palette: {
           ...customTheme.palette,
