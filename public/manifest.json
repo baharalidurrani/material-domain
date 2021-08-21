@@ -1,5 +1,5 @@
 {
-  "short_name": "Bahar Ali Durrani",
+  "short_name": "Durrani",
   "name": "Bahar Ali Durrani",
   "icons": [
     {
@@ -21,6 +21,6 @@
   ],
   "start_url": "https://durrani.dev",
   "display": "standalone",
-  "theme_color": "#c51162",
-  "background_color": "#c51162"
+  "theme_color": "#9c27b0",
+  "background_color": "#9c27b0"
 }
