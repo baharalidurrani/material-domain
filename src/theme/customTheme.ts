@@ -1,10 +1,9 @@
-import green from "@material-ui/core/colors/green";
-import purple from "@material-ui/core/colors/purple";
-import { ThemeOptions } from "@material-ui/core/styles";
+import { green, purple } from "@mui/material/colors";
+import { ThemeOptions } from "@mui/material/styles";
 
 export const customTheme: ThemeOptions = {
   palette: {
-    // type: "dark",
+    // mode: "dark",
     primary: {
       main: purple[500],
     },

@@ -1,4 +1,4 @@
-import PhoneIcon from "@material-ui/icons/Phone";
+import PhoneIcon from "@mui/icons-material/Phone";
 import { IRoute } from "src/common/typings/routes";
 import { ContactModule } from "./ContactModule";
 

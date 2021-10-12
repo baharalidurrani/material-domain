@@ -1,20 +1,20 @@
 import React, { useState } from "react";
-import { Button, TextField, Typography } from "@material-ui/core";
-import Box from "@material-ui/core/Box";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import IconButton from "@material-ui/core/IconButton";
-import AddCircleOutlineOutlinedIcon from "@material-ui/icons/AddCircleOutlineOutlined";
-import RemoveCircleOutlineOutlinedIcon from "@material-ui/icons/RemoveCircleOutlineOutlined";
+import AddCircleOutlineOutlinedIcon from "@mui/icons-material/AddCircleOutlineOutlined";
+import RemoveCircleOutlineOutlinedIcon from "@mui/icons-material/RemoveCircleOutlineOutlined";
+import { Button, TextField, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
+import Container from "@mui/material/Container";
+import Grid from "@mui/material/Grid";
+import IconButton from "@mui/material/IconButton";
 import {
   decrement,
   increment,
-  incrementByAmount,
   incrementAsync,
+  incrementByAmount,
   incrementIfOdd,
   selectCount,
 } from "src/app-redux/counter/counterSlice";
-import { useAppSelector, useAppDispatch } from "src/app-redux/hooks";
+import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
 
 export function Counter() {
   const count = useAppSelector(selectCount);
@@ -36,6 +36,7 @@ export function Counter() {
               color="primary"
               aria-label="Decrement value"
               onClick={() => dispatch(decrement())}
+              size="large"
             >
               <RemoveCircleOutlineOutlinedIcon />
             </IconButton>
@@ -48,6 +49,7 @@ export function Counter() {
               color="primary"
               aria-label="Increment value"
               onClick={() => dispatch(increment())}
+              size="large"
             >
               <AddCircleOutlineOutlinedIcon />
             </IconButton>
