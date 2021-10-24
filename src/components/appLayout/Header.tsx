@@ -1,16 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import AppBar from "@material-ui/core/AppBar";
-import IconButton from "@material-ui/core/IconButton";
-import Slide from "@material-ui/core/Slide";
-import { createStyles, makeStyles, Theme, useTheme } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
-import Brightness4Icon from "@material-ui/icons/Brightness4";
-import BrightnessHighIcon from "@material-ui/icons/BrightnessHigh";
-import GitHubIcon from "@material-ui/icons/GitHub";
-import MenuIcon from "@material-ui/icons/Menu";
+import Brightness4Icon from "@mui/icons-material/Brightness4";
+import BrightnessHighIcon from "@mui/icons-material/BrightnessHigh";
+import GitHubIcon from "@mui/icons-material/GitHub";
+import MenuIcon from "@mui/icons-material/Menu";
+import AppBar from "@mui/material/AppBar";
+import IconButton from "@mui/material/IconButton";
+import Slide from "@mui/material/Slide";
+import { Theme, useTheme } from "@mui/material/styles";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import useScrollTrigger from "@mui/material/useScrollTrigger";
+import createStyles from "@mui/styles/createStyles";
+import makeStyles from "@mui/styles/makeStyles";
 import { useAppDispatch } from "src/app-redux/hooks";
 import { themeTypeAction, toggleMobileDrawerAction } from "src/app-redux/settings/settingsSlice";
 import { DRAWER_WIDTH } from "./SideNav";
@@ -44,7 +46,7 @@ export function Header() {
   const classes = useStyles();
   const trigger = useScrollTrigger();
 
-  const isDarkTheme = useTheme().palette.type === "dark";
+  const isDarkTheme = useTheme().palette.mode === "dark";
   const toggleTheme = () => {
     dispatch(themeTypeAction(isDarkTheme ? "light" : "dark"));
   };
@@ -59,6 +61,7 @@ export function Header() {
             edge="start"
             onClick={() => dispatch(toggleMobileDrawerAction())}
             className={classes.menuButton}
+            size="large"
           >
             <MenuIcon />
           </IconButton>
@@ -71,6 +74,7 @@ export function Header() {
             target="_blank"
             color="inherit"
             rel="noopener"
+            size="large"
           >
             <GitHubIcon />
           </IconButton>
@@ -78,6 +82,7 @@ export function Header() {
             color="inherit"
             onClick={toggleTheme}
             aria-label="Switch between Light and Dark Theme"
+            size="large"
           >
             {isDarkTheme ? <BrightnessHighIcon /> : <Brightness4Icon />}
           </IconButton>

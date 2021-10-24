@@ -1,4 +1,4 @@
-import GradeIcon from "@material-ui/icons/Grade";
+import GradeIcon from "@mui/icons-material/Grade";
 import { IRoute } from "src/common/typings/routes";
 import { InterestsModule } from "./InterestsModule";
 

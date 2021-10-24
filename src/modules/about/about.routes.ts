@@ -1,4 +1,4 @@
-import InfoIcon from "@material-ui/icons/Info";
+import InfoIcon from "@mui/icons-material/Info";
 import { IRoute } from "src/common/typings/routes";
 import { AboutModule } from "./AboutModule";
 

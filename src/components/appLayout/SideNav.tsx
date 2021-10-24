@@ -1,7 +1,9 @@
 import React from "react";
-import Drawer from "@material-ui/core/Drawer";
-import Hidden from "@material-ui/core/Hidden";
-import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import Drawer from "@mui/material/Drawer";
+import Hidden from "@mui/material/Hidden";
+import { Theme } from "@mui/material/styles";
+import createStyles from "@mui/styles/createStyles";
+import makeStyles from "@mui/styles/makeStyles";
 import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
 import { selectMobileDrawer, toggleMobileDrawerAction } from "src/app-redux/settings/settingsSlice";
 import { DrawerContent } from "./DrawerContent";
@@ -50,7 +52,7 @@ export function SideNav() {
           <DrawerContent />
         </Drawer>
       </Hidden>
-      <Hidden smDown implementation="css">
+      <Hidden mdDown implementation="css">
         <Drawer
           id="permanent-desktop-drawer"
           classes={{

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, Redirect, useHistory } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { Button } from "@mui/material";
 // import { isLogin } from "src/app-redux/auth/authSlice";
 // import { useAppSelector } from "src/app-redux/hooks";
 import { getToken } from "src/common/utils/tokenManager.util";

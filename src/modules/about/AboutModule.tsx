@@ -1,6 +1,6 @@
 import React from "react";
-import { Box, Typography } from "@material-ui/core";
-import Container from "@material-ui/core/Container";
+import { Box, Typography } from "@mui/material";
+import Container from "@mui/material/Container";
 
 type Props = {};
 
