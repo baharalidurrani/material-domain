@@ -1,14 +1,14 @@
 import React, { useEffect, useMemo } from "react";
 import { CssBaseline, useMediaQuery } from "@mui/material";
-import { createTheme, StyledEngineProvider, Theme, ThemeProvider } from "@mui/material/styles";
+import { createTheme, StyledEngineProvider, ThemeProvider } from "@mui/material/styles";
 import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
 import { selectThemeType, themeTypeAction } from "src/app-redux/settings/settingsSlice";
 import { customTheme } from "./customTheme";
 
-declare module "@mui/styles/defaultTheme" {
-  // eslint-disable-next-line @typescript-eslint/no-empty-interface
-  interface DefaultTheme extends Theme {}
-}
+// declare module "@mui/styles/defaultTheme" {
+//   // eslint-disable-next-line @typescript-eslint/no-empty-interface
+//   interface DefaultTheme extends Theme {}
+// }
 
 interface Props {
   children: React.ReactNode;
