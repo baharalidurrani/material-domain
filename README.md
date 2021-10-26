@@ -1,5 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+Digital Object Identifier available for citation at:
+
+[![DOI](https://zenodo.org/badge/360168321.svg)](https://zenodo.org/badge/latestdoi/360168321)
+
+
 ## Features included
 
 - Built using Typescript.
