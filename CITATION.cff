@@ -1,9 +1,22 @@
-cff-version: 1.1.0
-message: "If you use this software, please cite it as below."
-authors:
-  - family-names: Ali
+abstract: "A production-ready React, Typescript, Material-UI, Redux-Toolkit based responsive boilerplate."
+authors: 
+  -
+    family-names: Ali
     given-names: Bahar
-    orcid: https://orcid.org/0000-0003-2750-4420
-title: baharalidurrani/material-domain: v1.0.0 MUI - 5
-version: v1.0.0
+    name-particle: Durrani
+    orcid: "https://orcid.org/0000-0003-2750-4420"
+cff-version: "1.1.0"
 date-released: 2021-10-26
+doi: "10.5281/zenodo.5600545"
+keywords: 
+  - react
+  - typescript
+  - "material-ui"
+  - mui
+  - redux
+  - "redux-toolkit"
+license: "GPL-3.0"
+message: "If you use this software, please cite it using these metadata."
+repository-code: "https://github.com/baharalidurrani/material-domain"
+title: "baharalidurrani/material-domain: v1.0.0 MUI - 5"
+version: "v1.0.2"
