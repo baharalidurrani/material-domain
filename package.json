@@ -2,6 +2,34 @@
   "name": "material-domain",
   "version": "0.3.0",
   "private": true,
+  "scripts": {
+    "build": "react-scripts build",
+    "dep:upgrade": "npx npm-check-updates -u && yarn install",
+    "eject": "react-scripts eject",
+    "lint": "eslint --fix src/**/*.ts src/**/*.tsx",
+    "pretty": "prettier --write \"**/*.+(ts|tsx|css)\"",
+    "start": "react-scripts start",
+    "starts": "HTTPS=true SSL_CRT_FILE=~/localhost+1.pem SSL_KEY_FILE=~/localhost+1-key.pem react-scripts start",
+    "test": "react-scripts test"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
   "dependencies": {
     "@emotion/react": "^11.5.0",
     "@emotion/styled": "^11.3.0",
@@ -24,34 +52,6 @@
     "react-scripts": "^4.0.3",
     "typescript": "^4.4.4",
     "web-vitals": "^2.1.2"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "starts": "HTTPS=true SSL_CRT_FILE=~/localhost+1.pem SSL_KEY_FILE=~/localhost+1-key.pem react-scripts start",
-    "pretty": "prettier --write \"**/*.+(ts|tsx|css)\"",
-    "lint": "eslint --fix src/**/*.ts src/**/*.tsx",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "dep:upgrade": "npx npm-check-updates -u && yarn install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
   },
   "devDependencies": {
     "@types/react-router-dom": "^5.3.2",
