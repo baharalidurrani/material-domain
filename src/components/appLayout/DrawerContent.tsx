@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
-// import { NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import { Grid } from "@mui/material";
@@ -43,7 +42,7 @@ export function DrawerContent() {
   const dispatch = useAppDispatch();
 
   const location = useLocation();
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
   const [expand, setExpand] = useState<string>(location.pathname);
   useEffect(() => {
     setExpand(location.pathname);
@@ -67,16 +66,16 @@ export function DrawerContent() {
         {ROUTES.map((route, i) => (
           <div key={i}>
             <ListItem
-              // button
-              // component={NavLink}
-              // to={route.path}
+              button
+              component={NavLink}
+              to={route.path}
               // activeClassName="Mui-selected"
               onClick={() => {
                 if (route.subRoutes?.length)
                   if (expand.includes(route.path)) setExpand("");
                   else setExpand(route.path);
                 dispatch(openDrawerAction(false));
-                navigate(route.path);
+                // navigate(route.path);
               }}
             >
               <ListItemIcon>
@@ -104,14 +103,14 @@ export function DrawerContent() {
               >
                 <List component="div" disablePadding>
                   <ListItem
-                    // button
                     className={classes.nested}
-                    // component={NavLink}
-                    // to={`${route.path}${sub.path}`}
+                    button
+                    component={NavLink}
+                    to={`${route.path}/${sub.path}`}
                     // activeClassName="Mui-selected"
                     onClick={() => {
                       dispatch(openDrawerAction(false));
-                      navigate(`${route.path}/${sub.path}`);
+                      // navigate(`${route.path}/${sub.path}`);
                     }}
                   >
                     <ListItemText>
