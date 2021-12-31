@@ -4,7 +4,7 @@ import { ContactModule } from "./ContactModule";
 
 export const ContactRoute: IRoute = {
   title: "Contact",
-  path: "/contact",
+  path: "contact",
   icon: PhoneIcon,
   component: ContactModule,
   // subRoutes: [

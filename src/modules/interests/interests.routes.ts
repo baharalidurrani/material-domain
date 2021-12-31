@@ -4,7 +4,7 @@ import { InterestsModule } from "./InterestsModule";
 
 export const InterestsRoute: IRoute = {
   title: "Interests",
-  path: "/interests",
+  path: "interests",
   icon: GradeIcon,
   component: InterestsModule,
   // subRoutes: [

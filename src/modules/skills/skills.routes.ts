@@ -4,7 +4,7 @@ import { SkillsModule } from "./SkillsModule";
 
 export const SkillsRoute: IRoute = {
   title: "Skills",
-  path: "/skills",
+  path: "skills",
   icon: BuildIcon,
   component: SkillsModule,
   // subRoutes: [

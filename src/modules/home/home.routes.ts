@@ -4,7 +4,7 @@ import { HomeModule } from "./HomeModule";
 
 export const HomeRoute: IRoute = {
   title: "Home",
-  path: "/home",
+  path: "home",
   icon: HomeIcon,
   component: HomeModule,
   // subRoutes: [
