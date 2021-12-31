@@ -4,7 +4,7 @@ import { AboutModule } from "./AboutModule";
 
 export const AboutRoute: IRoute = {
   title: "About",
-  path: "/about",
+  path: "about",
   icon: InfoIcon,
   component: AboutModule,
   // subRoutes: [

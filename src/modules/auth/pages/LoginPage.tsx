@@ -1,15 +1,18 @@
 import React from "react";
-import { Link, Redirect, useHistory } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate, Location } from "react-router-dom";
 import { Button } from "@mui/material";
 // import { isLogin } from "src/app-redux/auth/authSlice";
 // import { useAppSelector } from "src/app-redux/hooks";
 import { getToken } from "src/common/utils/tokenManager.util";
 
 export function LoginPage() {
-  const history = useHistory();
+  const navigate = useNavigate();
+  const location = useLocation();
+  const state = location.state as { from?: Location };
+  const from = state?.from?.pathname || "/";
   // const log = useAppSelector(isLogin);
   return getToken() ? (
-    <Redirect to={{ pathname: "/" }} />
+    <Navigate to={from} replace />
   ) : (
     <>
       <Button
@@ -17,7 +20,7 @@ export function LoginPage() {
         color="primary"
         onClick={() => {
           localStorage.setItem("TOKEN", "auth");
-          history.push("/");
+          navigate(from, { replace: true });
         }}
       >
         Login

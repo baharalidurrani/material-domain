@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Redirect, Route, Switch } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "src/components/appLayout/AppLayout";
 import { RouteGuard } from "src/modules/auth/components/RouteGuard";
 import { ROUTES } from "./routes";
@@ -10,24 +10,20 @@ export function AppRouting() {
   return (
     <BrowserRouter>
       <AppLayout>
-        <Switch>
+        <Routes>
           {ROUTES.map((route, i) => (
-            <Route key={i} path={route.path}>
-              {route.guard ? (
-                <RouteGuard path={route.path} redirectPath="/auth/login">
+            <Route
+              key={i}
+              path={`${route.path}/*`}
+              element={
+                <RouteGuard path={route.path} route={route} redirectPath="/auth/login">
                   {<route.component />}
                 </RouteGuard>
-              ) : (
-                <route.component />
-              )}
-            </Route>
+              }
+            ></Route>
           ))}
-
-          {/* <Route path="/" exact>
-          <h1>root</h1>
-        </Route> */}
-          <Redirect to={{ pathname: "/home" }} />
-        </Switch>
+          <Route path="*" element={<Navigate replace to="/home" />} />
+        </Routes>
       </AppLayout>
     </BrowserRouter>
   );

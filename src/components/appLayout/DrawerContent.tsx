@@ -68,7 +68,7 @@ export function DrawerContent() {
               button
               component={NavLink}
               to={route.path}
-              activeClassName="Mui-selected"
+              selected={location.pathname === `/${route.path}`}
               onClick={() => {
                 if (route.subRoutes?.length)
                   if (expand.includes(route.path)) setExpand("");
@@ -101,11 +101,11 @@ export function DrawerContent() {
               >
                 <List component="div" disablePadding>
                   <ListItem
-                    button
                     className={classes.nested}
+                    button
                     component={NavLink}
-                    to={`${route.path}${sub.path}`}
-                    activeClassName="Mui-selected"
+                    to={`${route.path}/${sub.path}`}
+                    selected={location.pathname === `/${route.path}/${sub.path}`}
                     onClick={() => {
                       dispatch(openDrawerAction(false));
                     }}

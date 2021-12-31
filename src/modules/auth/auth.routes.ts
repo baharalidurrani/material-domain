@@ -7,11 +7,11 @@ import { LoginPage, RegisterPage } from "./pages";
 
 export const AuthRoute: IRoute = {
   title: "Authentication",
-  path: "/auth",
+  path: "auth",
   icon: HomeIcon,
   component: AuthModule,
   subRoutes: [
-    { icon: InfoIcon, component: LoginPage, path: "/login", title: "Auth Login" },
-    { icon: NewReleasesIcon, component: RegisterPage, path: "/register", title: "Auth Register" },
+    { icon: InfoIcon, component: LoginPage, path: "login", title: "Auth Login" },
+    { icon: NewReleasesIcon, component: RegisterPage, path: "register", title: "Auth Register" },
   ],
 };
