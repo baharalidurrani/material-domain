@@ -42,7 +42,6 @@ export function DrawerContent() {
   const dispatch = useAppDispatch();
 
   const location = useLocation();
-  // const navigate = useNavigate();
   const [expand, setExpand] = useState<string>(location.pathname);
   useEffect(() => {
     setExpand(location.pathname);
@@ -75,7 +74,6 @@ export function DrawerContent() {
                   if (expand.includes(route.path)) setExpand("");
                   else setExpand(route.path);
                 dispatch(openDrawerAction(false));
-                // navigate(route.path);
               }}
             >
               <ListItemIcon>
@@ -110,7 +108,6 @@ export function DrawerContent() {
                     // activeClassName="Mui-selected"
                     onClick={() => {
                       dispatch(openDrawerAction(false));
-                      // navigate(`${route.path}/${sub.path}`);
                     }}
                   >
                     <ListItemText>
