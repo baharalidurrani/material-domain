@@ -1,1 +1,0 @@
-Commit $GITHUB_SHA on Branch $GITHUB_REF
