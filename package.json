@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "build": "react-scripts build",
-    "dep:upgrade": "npx npm-check-updates -u && yarn install",
+    "dep:upgrade": "npx npm-check-updates -u && npm install",
     "eject": "react-scripts eject",
     "lint": "eslint --fix src/**/*.ts src/**/*.tsx",
     "pretty": "prettier --write \"**/*.+(ts|tsx|css)\"",
