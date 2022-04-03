@@ -20,7 +20,7 @@ jobs:
         if: steps.cache.outputs.cache-hit != 'true'
         run: npm ci --ignore-scripts
 
-      - run: npm build
+      - run: npm run build
       - run: echo Commit $GITHUB_SHA on Branch $GITHUB_REF_NAME > build/build.txt
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
