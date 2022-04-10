@@ -6,8 +6,8 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
 import { selectThemeType, themeTypeAction } from "src/app-redux/settings/settingsSlice";
 import { customTheme } from "./customTheme";
-// import { Theme } from '@mui/material/styles';
-// declare module '@mui/styles/defaultTheme' {
+// import { Theme } from "@mui/material/styles";
+// declare module "@mui/styles/defaultTheme" {
 //   // eslint-disable-next-line @typescript-eslint/no-empty-interface (remove this line if you don't have the rule enabled)
 //   interface DefaultTheme extends Theme {}
 // }
