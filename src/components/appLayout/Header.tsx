@@ -7,43 +7,40 @@ import MenuIcon from "@mui/icons-material/Menu";
 import AppBar from "@mui/material/AppBar";
 import IconButton from "@mui/material/IconButton";
 import Slide from "@mui/material/Slide";
-import { Theme, useTheme } from "@mui/material/styles";
+import { useTheme } from "@mui/material/styles";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import useScrollTrigger from "@mui/material/useScrollTrigger";
-import createStyles from "@mui/styles/createStyles";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles } from "tss-react/mui";
 import { useAppDispatch } from "src/app-redux/hooks";
 import { themeTypeAction, toggleMobileDrawerAction } from "src/app-redux/settings/settingsSlice";
 import { DRAWER_WIDTH } from "./SideNav";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    appBar: {
-      flexGrow: 1,
-      [theme.breakpoints.up("md")]: {
-        width: `calc(100% - ${DRAWER_WIDTH}px)`,
-        marginLeft: DRAWER_WIDTH,
-      },
+const useStyles = makeStyles()((theme) => ({
+  appBar: {
+    flexGrow: 1,
+    [theme.breakpoints.up("md")]: {
+      width: `calc(100% - ${DRAWER_WIDTH}px)`,
+      marginLeft: DRAWER_WIDTH,
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-      [theme.breakpoints.up("md")]: {
-        display: "none",
-      },
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+    [theme.breakpoints.up("md")]: {
+      display: "none",
     },
-    title: {
-      flexGrow: 1,
-      textAlign: "center",
-      textDecoration: "none",
-      color: "unset",
-    },
-  })
-);
+  },
+  title: {
+    flexGrow: 1,
+    textAlign: "center",
+    textDecoration: "none",
+    color: "unset",
+  },
+}));
 
 export function Header() {
   const dispatch = useAppDispatch();
-  const classes = useStyles();
+  const { classes } = useStyles();
   const trigger = useScrollTrigger();
 
   const isDarkTheme = useTheme().palette.mode === "dark";
