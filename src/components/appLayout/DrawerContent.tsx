@@ -8,37 +8,33 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
-import { Theme } from "@mui/material/styles";
 import Tooltip from "@mui/material/Tooltip";
 import Typography from "@mui/material/Typography";
-import createStyles from "@mui/styles/createStyles";
-import makeStyles from "@mui/styles/makeStyles";
+import { makeStyles } from "tss-react/mui";
 import { useAppDispatch } from "src/app-redux/hooks";
 import { openDrawerAction } from "src/app-redux/settings/settingsSlice";
 import { ROUTES } from "src/routes/routes";
 import { DRAWER_WIDTH } from "./SideNav";
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    // necessary for content to be below app bar
-    // toolbar: theme.mixins.toolbar,
-    logo: {
-      width: DRAWER_WIDTH - 50,
-      height: DRAWER_WIDTH - 50,
-      marginTop: theme.spacing(2),
-      marginBottom: theme.spacing(2),
-    },
-    drawerPaper: {
-      width: DRAWER_WIDTH,
-    },
-    nested: {
-      paddingLeft: theme.spacing(9),
-    },
-  })
-);
+const useStyles = makeStyles()((theme) => ({
+  // necessary for content to be below app bar
+  // toolbar: theme.mixins.toolbar,
+  logo: {
+    width: DRAWER_WIDTH - 50,
+    height: DRAWER_WIDTH - 50,
+    marginTop: theme.spacing(2),
+    marginBottom: theme.spacing(2),
+  },
+  drawerPaper: {
+    width: DRAWER_WIDTH,
+  },
+  nested: {
+    paddingLeft: theme.spacing(9),
+  },
+}));
 
 export function DrawerContent() {
-  const classes = useStyles();
+  const { classes } = useStyles();
   const dispatch = useAppDispatch();
 
   const location = useLocation();
