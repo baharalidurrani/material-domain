@@ -1,4 +1,3 @@
-import React from "react";
 import Drawer from "@mui/material/Drawer";
 import Hidden from "@mui/material/Hidden";
 import { makeStyles } from "tss-react/mui";

@@ -1,5 +1,3 @@
-import React from "react";
-
 export function HomePage2() {
   console.log("Page2");
 
