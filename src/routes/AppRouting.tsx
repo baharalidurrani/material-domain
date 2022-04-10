@@ -1,4 +1,3 @@
-import React from "react";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { AppLayout } from "src/components/appLayout/AppLayout";
 import { RouteGuard } from "src/modules/auth/components/RouteGuard";

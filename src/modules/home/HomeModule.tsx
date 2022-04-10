@@ -1,4 +1,3 @@
-import React from "react";
 import { HomePage1 } from "./pages";
 
 export function HomeModule() {

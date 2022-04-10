@@ -1,4 +1,3 @@
-import React from "react";
 import { ModuleRouter } from "src/components/molecules";
 import { AuthRoute } from "./auth.routes";
 
