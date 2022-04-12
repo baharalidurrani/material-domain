@@ -2,10 +2,14 @@
 # https://github.com/firebase/firebase-tools
 
 name: Deploy to Firebase Hosting on merge
-"on":
+# Controls when the action will run.
+on:
+  # Triggers the workflow on push or pull request events but only for the development branch
   push:
-    branches:
-      - master
+    branches: [master]
+
+  # Allows you to run this workflow manually from the Actions tab
+  workflow_dispatch:
 
 env:
   GENERATE_SOURCEMAP: false
