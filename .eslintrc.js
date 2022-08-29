@@ -24,6 +24,7 @@ module.exports = {
   plugins: ["react", "jsx-a11y", "import", "@typescript-eslint"],
   rules: {
     // G E N E R A L
+    "linebreak-style": ["error", "unix"],
     yoda: "error",
     quotes: ["error", "double", { avoidEscape: true }],
     "no-empty-function": "error",
