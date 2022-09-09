@@ -1,5 +1,5 @@
-import { PayloadAction } from "@reduxjs/toolkit";
-import { SettingsState } from "../settingsSlice";
+import { PayloadAction } from '@reduxjs/toolkit';
+import { SettingsState } from '../settingsSlice';
 
 /**
  * Don't use directly, instead use `openDrawerAction` from the corresponding slice/reduce file

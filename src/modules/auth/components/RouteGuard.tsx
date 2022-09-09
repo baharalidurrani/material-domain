@@ -1,9 +1,9 @@
-import React from "react";
-import { Navigate, useLocation } from "react-router-dom";
-import { IRoute } from "src/common/typings/routes";
+import React from 'react';
+import { Navigate, useLocation } from 'react-router-dom';
+import { IRoute } from 'src/common/typings/routes';
 // import { isLogin } from "src/app-redux/auth/authSlice";
 // import { useAppSelector } from "src/app-redux/hooks";
-import { getToken } from "src/common/utils/tokenManager.util";
+import { getToken } from 'src/common/utils/tokenManager.util';
 
 interface Props {
   children: React.ReactNode;
@@ -13,7 +13,7 @@ interface Props {
 }
 
 export function RouteGuard(props: Props) {
-  console.log("RouteGuard on path: ", props.path);
+  console.log('RouteGuard on path: ', props.path);
   const location = useLocation();
   // const token = useAppSelector(isLogin);
 

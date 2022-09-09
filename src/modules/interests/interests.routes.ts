@@ -1,10 +1,10 @@
-import GradeIcon from "@mui/icons-material/Grade";
-import { IRoute } from "src/common/typings/routes";
-import { InterestsModule } from "./InterestsModule";
+import GradeIcon from '@mui/icons-material/Grade';
+import { IRoute } from 'src/common/typings/routes';
+import { InterestsModule } from './InterestsModule';
 
 export const InterestsRoute: IRoute = {
-  title: "Interests",
-  path: "interests",
+  title: 'Interests',
+  path: 'interests',
   icon: GradeIcon,
   component: InterestsModule,
   // subRoutes: [

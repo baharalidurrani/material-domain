@@ -1,39 +1,39 @@
-import { Link } from "react-router-dom";
-import Brightness4Icon from "@mui/icons-material/Brightness4";
-import BrightnessHighIcon from "@mui/icons-material/BrightnessHigh";
-import GitHubIcon from "@mui/icons-material/GitHub";
-import MenuIcon from "@mui/icons-material/Menu";
-import AppBar from "@mui/material/AppBar";
-import IconButton from "@mui/material/IconButton";
-import Slide from "@mui/material/Slide";
-import { useTheme } from "@mui/material/styles";
-import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
-import useScrollTrigger from "@mui/material/useScrollTrigger";
-import { makeStyles } from "tss-react/mui";
-import { useAppDispatch } from "src/app-redux/hooks";
-import { themeTypeAction, toggleMobileDrawerAction } from "src/app-redux/settings/settingsSlice";
-import { DRAWER_WIDTH } from "./SideNav";
+import { Link } from 'react-router-dom';
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import BrightnessHighIcon from '@mui/icons-material/BrightnessHigh';
+import GitHubIcon from '@mui/icons-material/GitHub';
+import MenuIcon from '@mui/icons-material/Menu';
+import AppBar from '@mui/material/AppBar';
+import IconButton from '@mui/material/IconButton';
+import Slide from '@mui/material/Slide';
+import { useTheme } from '@mui/material/styles';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import useScrollTrigger from '@mui/material/useScrollTrigger';
+import { makeStyles } from 'tss-react/mui';
+import { useAppDispatch } from 'src/app-redux/hooks';
+import { themeTypeAction, toggleMobileDrawerAction } from 'src/app-redux/settings/settingsSlice';
+import { DRAWER_WIDTH } from './SideNav';
 
 const useStyles = makeStyles()((theme) => ({
   appBar: {
     flexGrow: 1,
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       width: `calc(100% - ${DRAWER_WIDTH}px)`,
       marginLeft: DRAWER_WIDTH,
     },
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    [theme.breakpoints.up("md")]: {
-      display: "none",
+    [theme.breakpoints.up('md')]: {
+      display: 'none',
     },
   },
   title: {
     flexGrow: 1,
-    textAlign: "center",
-    textDecoration: "none",
-    color: "unset",
+    textAlign: 'center',
+    textDecoration: 'none',
+    color: 'unset',
   },
 }));
 
@@ -42,9 +42,9 @@ export function Header() {
   const { classes } = useStyles();
   const trigger = useScrollTrigger();
 
-  const isDarkTheme = useTheme().palette.mode === "dark";
+  const isDarkTheme = useTheme().palette.mode === 'dark';
   const toggleTheme = () => {
-    dispatch(themeTypeAction(isDarkTheme ? "light" : "dark"));
+    dispatch(themeTypeAction(isDarkTheme ? 'light' : 'dark'));
   };
 
   return (

@@ -1,9 +1,9 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import { setOpenDrawer, toggleMobileDrawer } from "./actions/drawerActions";
-import { setThemeType } from "./actions/setThemeType";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../store';
+import { setOpenDrawer, toggleMobileDrawer } from './actions/drawerActions';
+import { setThemeType } from './actions/setThemeType';
 
-export type ThemeType = null | "light" | "dark";
+export type ThemeType = null | 'light' | 'dark';
 
 export interface SettingsState {
   themeType: ThemeType;
@@ -16,7 +16,7 @@ const initialState: SettingsState = {
 };
 
 export const settingsSlice = createSlice({
-  name: "settings",
+  name: 'settings',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -27,8 +27,7 @@ export const settingsSlice = createSlice({
   },
 });
 
-export const { themeTypeAction, openDrawerAction, toggleMobileDrawerAction } =
-  settingsSlice.actions;
+export const { themeTypeAction, openDrawerAction, toggleMobileDrawerAction } = settingsSlice.actions;
 
 // The function below is called a selector and allows us to select a value from
 // the state. Selectors can also be defined inline where they're used instead of

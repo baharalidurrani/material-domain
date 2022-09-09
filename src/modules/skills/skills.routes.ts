@@ -1,10 +1,10 @@
-import BuildIcon from "@mui/icons-material/Build";
-import { IRoute } from "src/common/typings/routes";
-import { SkillsModule } from "./SkillsModule";
+import BuildIcon from '@mui/icons-material/Build';
+import { IRoute } from 'src/common/typings/routes';
+import { SkillsModule } from './SkillsModule';
 
 export const SkillsRoute: IRoute = {
-  title: "Skills",
-  path: "skills",
+  title: 'Skills',
+  path: 'skills',
   icon: BuildIcon,
   component: SkillsModule,
   // subRoutes: [

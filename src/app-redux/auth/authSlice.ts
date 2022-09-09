@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit";
-import { RootState } from "../store";
-import { currentUserAction, handleLogin, loginAction, logOutAction } from "./actions/authActions";
+import { createSlice } from '@reduxjs/toolkit';
+import { RootState } from '../store';
+import { currentUserAction, handleLogin, loginAction, logOutAction } from './actions/authActions';
 
 export interface AuthState {
   TOKEN?: string;
-  status: "idle" | "loading" | "failed";
+  status: 'idle' | 'loading' | 'failed';
 }
 
 const initialState: AuthState = {
-  status: "idle",
+  status: 'idle',
 };
 
 export const authSlice = createSlice({
-  name: "auth",
+  name: 'auth',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -23,32 +23,32 @@ export const authSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(loginAction.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(loginAction.fulfilled, handleLogin)
       .addCase(loginAction.rejected, (state) => {
-        state.status = "failed";
+        state.status = 'failed';
         delete state.TOKEN;
       })
 
       .addCase(currentUserAction.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(currentUserAction.fulfilled, handleLogin)
       .addCase(currentUserAction.rejected, (state) => {
-        state.status = "failed";
+        state.status = 'failed';
         delete state.TOKEN;
       })
 
       .addCase(logOutAction.pending, (state) => {
-        state.status = "loading";
+        state.status = 'loading';
       })
       .addCase(logOutAction.fulfilled, (state) => {
-        state.status = "idle";
+        state.status = 'idle';
         delete state.TOKEN;
       })
       .addCase(logOutAction.rejected, (state) => {
-        state.status = "failed";
+        state.status = 'failed';
       });
   },
 });

@@ -1,10 +1,10 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
-import { AppLayout } from "src/components/appLayout/AppLayout";
-import { RouteGuard } from "src/modules/auth/components/RouteGuard";
-import { ROUTES } from "./routes";
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { AppLayout } from 'src/components/appLayout/AppLayout';
+import { RouteGuard } from 'src/modules/auth/components/RouteGuard';
+import { ROUTES } from './routes';
 
 export function AppRouting() {
-  console.log("AppRouting");
+  console.log('AppRouting');
 
   return (
     <BrowserRouter>

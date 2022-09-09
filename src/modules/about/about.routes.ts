@@ -1,10 +1,10 @@
-import InfoIcon from "@mui/icons-material/Info";
-import { IRoute } from "src/common/typings/routes";
-import { AboutModule } from "./AboutModule";
+import InfoIcon from '@mui/icons-material/Info';
+import { IRoute } from 'src/common/typings/routes';
+import { AboutModule } from './AboutModule';
 
 export const AboutRoute: IRoute = {
-  title: "About",
-  path: "about",
+  title: 'About',
+  path: 'about',
   icon: InfoIcon,
   component: AboutModule,
   // subRoutes: [

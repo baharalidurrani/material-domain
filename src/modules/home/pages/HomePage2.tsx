@@ -1,5 +1,5 @@
 export function HomePage2() {
-  console.log("Page2");
+  console.log('Page2');
 
   return (
     <>

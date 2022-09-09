@@ -1,8 +1,8 @@
-import { ModuleRouter } from "src/components/molecules";
-import { AuthRoute } from "./auth.routes";
+import { ModuleRouter } from 'src/components/molecules';
+import { AuthRoute } from './auth.routes';
 
 export function AuthModule() {
-  console.log("AuthModule");
+  console.log('AuthModule');
 
   return <ModuleRouter moduleRoute={AuthRoute} />;
 }
