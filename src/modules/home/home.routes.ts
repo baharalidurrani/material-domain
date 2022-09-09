@@ -1,10 +1,10 @@
-import HomeIcon from "@mui/icons-material/Home";
-import { IRoute } from "src/common/typings/routes";
-import { HomeModule } from "./HomeModule";
+import HomeIcon from '@mui/icons-material/Home';
+import { IRoute } from 'src/common/typings/routes';
+import { HomeModule } from './HomeModule';
 
 export const HomeRoute: IRoute = {
-  title: "Home",
-  path: "home",
+  title: 'Home',
+  path: 'home',
   icon: HomeIcon,
   component: HomeModule,
   // subRoutes: [

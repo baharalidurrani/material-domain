@@ -1,11 +1,11 @@
-import React, { useEffect, useMemo } from "react";
-import createCache from "@emotion/cache";
-import { CacheProvider } from "@emotion/react";
-import { CssBaseline, useMediaQuery } from "@mui/material";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
-import { selectThemeType, themeTypeAction } from "src/app-redux/settings/settingsSlice";
-import { customTheme } from "./customTheme";
+import React, { useEffect, useMemo } from 'react';
+import createCache from '@emotion/cache';
+import { CacheProvider } from '@emotion/react';
+import { CssBaseline, useMediaQuery } from '@mui/material';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { useAppDispatch, useAppSelector } from 'src/app-redux/hooks';
+import { selectThemeType, themeTypeAction } from 'src/app-redux/settings/settingsSlice';
+import { customTheme } from './customTheme';
 // import { Theme } from "@mui/material/styles";
 // declare module "@mui/styles/defaultTheme" {
 //   // eslint-disable-next-line @typescript-eslint/no-empty-interface (remove this line if you don't have the rule enabled)
@@ -13,7 +13,7 @@ import { customTheme } from "./customTheme";
 // }
 
 export const muiCache = createCache({
-  key: "mui",
+  key: 'mui',
   prepend: true,
 });
 
@@ -24,7 +24,7 @@ export function CustomMuiTheme(props: Props) {
   const dispatch = useAppDispatch();
   const goDarkState = useAppSelector(selectThemeType);
 
-  const goDarkQuery = useMediaQuery("(prefers-color-scheme: dark)");
+  const goDarkQuery = useMediaQuery('(prefers-color-scheme: dark)');
   useEffect(() => {
     dispatch(themeTypeAction(null));
   }, [dispatch, goDarkQuery]);
@@ -35,7 +35,7 @@ export function CustomMuiTheme(props: Props) {
         ...customTheme,
         palette: {
           ...customTheme.palette,
-          mode: goDarkState ? goDarkState : goDarkQuery ? "dark" : "light",
+          mode: goDarkState ?? (goDarkQuery ? 'dark' : 'light'),
         },
       }),
     [goDarkQuery, goDarkState]

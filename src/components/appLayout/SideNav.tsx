@@ -1,14 +1,14 @@
-import Drawer from "@mui/material/Drawer";
-import Hidden from "@mui/material/Hidden";
-import { makeStyles } from "tss-react/mui";
-import { useAppDispatch, useAppSelector } from "src/app-redux/hooks";
-import { selectMobileDrawer, toggleMobileDrawerAction } from "src/app-redux/settings/settingsSlice";
-import { DrawerContent } from "./DrawerContent";
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
+import { makeStyles } from 'tss-react/mui';
+import { useAppDispatch, useAppSelector } from 'src/app-redux/hooks';
+import { selectMobileDrawer, toggleMobileDrawerAction } from 'src/app-redux/settings/settingsSlice';
+import { DrawerContent } from './DrawerContent';
 
 export const DRAWER_WIDTH = 240;
 const useStyles = makeStyles()((theme) => ({
   drawer: {
-    [theme.breakpoints.up("md")]: {
+    [theme.breakpoints.up('md')]: {
       width: DRAWER_WIDTH,
       flexShrink: 0,
     },

@@ -1,7 +1,7 @@
-import { HomePage1 } from "./pages";
+import { HomePage1 } from './pages';
 
 export function HomeModule() {
-  console.log("HomeModule");
+  console.log('HomeModule');
 
   return (
     <>
