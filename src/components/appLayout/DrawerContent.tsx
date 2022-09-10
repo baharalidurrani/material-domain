@@ -41,6 +41,7 @@ export function DrawerContent() {
   const [expand, setExpand] = useState<string>(location.pathname);
   useEffect(() => {
     setExpand(location.pathname);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
