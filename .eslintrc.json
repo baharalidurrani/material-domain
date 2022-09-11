@@ -19,7 +19,7 @@
   "rules": {
     "prettier/prettier": "error",
     "linebreak-style": ["error", "unix"],
-    "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+    "no-unused-vars": ["warn", { "argsIgnorePattern": "^_" }],
     "comma-dangle": "off",
     "multiline-ternary": "off",
     "react/react-in-jsx-scope": "off",
