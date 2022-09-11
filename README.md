@@ -11,13 +11,15 @@ Digital Object Identifier available for citation at:
 - Merged features from the official `create-react-app` template.
 - All the dependencies in package.json are up-to-date.
 - Redux folder structure is all set. Everything is decoupled upon store, slices, actions.
-- Common, Type Definitions, Enums, Utils, Global axios configured.
+- Common, Type Definitions, Enums, Utils.
+- Console Logs disabled in Prod Environment.
 - Basic routing is integrated.
-- Protected routes
+- Protected routes.
 - Components are divided into Modules, Pages, Components, Molecule and Atom. (Modules being biggest and atom being smallest).
-- Material-UI is integrated including fonts and icons.
+- Module Level Lazy Loading added.
+- Material-UI (MUI) is integrated including fonts and icons.
 - Basic Material Responsive Layout is added (Header/AppBar, SideNav/Drawer, MainContent).
-- Centralized/Global Material-UI theme is added. (Almost zero CSS will be used in the app).
+- Centralized/Global MUI theme is added. (Almost zero CSS is used in the app).
 - Auto/Manual Dark/Light theme is added.
 
 ### To be added
@@ -29,6 +31,12 @@ Digital Object Identifier available for citation at:
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run starts`
+
+Runs the app in the development mode securely with TLS.<br />
+Make sure you have [mkCert](https://github.com/FiloSottile/mkcert) configured properly.
+Open [🔒https://localhost:3000](https://localhost:3000) to view it in the browser.
 
 ### `npm start`
 
@@ -62,6 +70,22 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+
+### `npm run dep:upgrade`
+
+Run to update all packages to their latest version.
+
+### `npm run pretty`
+
+Run to format all files using prettier.
+
+### `npm run lint`
+
+Run to Dry Lint all files.
+
+### `npm run lint:fix`
+
+Run to fix all auto fixable eslint error.
 
 ## Learn More
 
