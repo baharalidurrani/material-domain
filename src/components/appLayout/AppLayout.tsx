@@ -4,14 +4,9 @@ import { makeStyles } from 'tss-react/mui';
 import { Header } from './Header';
 import { SideNav } from './SideNav';
 
-const useStyles = makeStyles()((theme) => ({
-  root: {
-    display: 'flex',
-  },
-  content: {
-    flexGrow: 1,
-    padding: theme.spacing(3),
-  },
+const useStyles = makeStyles()(() => ({
+  root: { display: 'flex' },
+  content: { flexGrow: 1 },
 }));
 
 interface Props {
