@@ -3,6 +3,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Digital Object Identifier available for citation at:
 
 [![DOI](https://zenodo.org/badge/360168321.svg)](https://zenodo.org/badge/latestdoi/360168321)
+![Production Build](https://github.com/baharalidurrani/material-domain/actions/workflows/firebase-hosting-merge.yml/badge.svg)
+![Preview Build](https://github.com/baharalidurrani/material-domain/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)
 
 ## Features included
 

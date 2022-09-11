@@ -1,6 +1,6 @@
 {
   "name": "material-domain",
-  "version": "4.3.0",
+  "version": "4.3.1",
   "private": true,
   "engines": {
     "node": ">= 18.5.0",
@@ -54,7 +54,7 @@
   },
   "devDependencies": {
     "@types/node": "^18.7.16",
-    "@types/react": "^18.0.18",
+    "@types/react": "^18.0.19",
     "@types/react-dom": "^18.0.6",
     "@types/react-redux": "^7.1.24",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
