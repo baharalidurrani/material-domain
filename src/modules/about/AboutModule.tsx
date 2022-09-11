@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Container from '@mui/material/Container';
 
-export function AboutModule(): React.ReactElement {
+export default function AboutModule(): React.ReactElement {
   console.log('AboutModule Rendered');
 
   return (
