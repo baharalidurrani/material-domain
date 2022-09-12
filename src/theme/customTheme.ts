@@ -1,9 +1,8 @@
 import { green, purple } from '@mui/material/colors';
 import { ThemeOptions } from '@mui/material/styles';
 
-export const customTheme: ThemeOptions = {
+const customTheme: ThemeOptions = {
   palette: {
-    // mode: "dark",
     primary: {
       main: purple[500],
     },
@@ -16,4 +15,19 @@ export const customTheme: ThemeOptions = {
   //   fontSize: 12,
   //   button: { textTransform: "none" },
   // },
+};
+
+export const customLightTheme: ThemeOptions = {
+  ...customTheme,
+  palette: {
+    ...customTheme.palette,
+    mode: 'light',
+  },
+};
+export const customDarkTheme: ThemeOptions = {
+  ...customTheme,
+  palette: {
+    ...customTheme.palette,
+    mode: 'dark',
+  },
 };

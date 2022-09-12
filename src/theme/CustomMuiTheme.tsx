@@ -5,7 +5,7 @@ import { CssBaseline, useMediaQuery } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useAppDispatch, useAppSelector } from 'src/app-redux/hooks';
 import { selectThemeType, themeTypeAction } from 'src/app-redux/settings/settingsSlice';
-import { customTheme } from './customTheme';
+import { customDarkTheme, customLightTheme } from './customTheme';
 // import { Theme } from "@mui/material/styles";
 // declare module "@mui/styles/defaultTheme" {
 //   // eslint-disable-next-line @typescript-eslint/no-empty-interface (remove this line if you don't have the rule enabled)
@@ -22,24 +22,16 @@ interface Props {
 }
 export function CustomMuiTheme(props: Props) {
   const dispatch = useAppDispatch();
-  const goDarkState = useAppSelector(selectThemeType);
+  const themeState = useAppSelector(selectThemeType);
 
   const goDarkQuery = useMediaQuery('(prefers-color-scheme: dark)');
-  useEffect(() => {
-    dispatch(themeTypeAction(null));
-  }, [dispatch, goDarkQuery]);
+  const goLightQuery = useMediaQuery('(prefers-color-scheme: light)');
 
-  const theme = useMemo(
-    () =>
-      createTheme({
-        ...customTheme,
-        palette: {
-          ...customTheme.palette,
-          mode: goDarkState ?? (goDarkQuery ? 'dark' : 'light'),
-        },
-      }),
-    [goDarkQuery, goDarkState]
-  );
+  useEffect(() => {
+    goDarkQuery && dispatch(themeTypeAction('dark'));
+    goLightQuery && dispatch(themeTypeAction('light'));
+  }, [dispatch, goDarkQuery, goLightQuery]);
+  const theme = useMemo(() => createTheme(themeState === 'dark' ? customDarkTheme : customLightTheme), [themeState]);
 
   return (
     <CacheProvider value={muiCache}>
