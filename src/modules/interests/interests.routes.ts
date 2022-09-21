@@ -6,6 +6,7 @@ export const InterestsRoute: IRoute = {
   title: 'Interests',
   path: 'interests',
   icon: GradeIcon,
+  // guard: true,
   component: InterestsModule,
   // subRoutes: [
   //   { icon: InfoIcon, component: HomePage1, path: "/page1", title: "Home Page 1" },

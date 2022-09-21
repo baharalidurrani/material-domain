@@ -4,11 +4,11 @@ import { createRoot } from 'react-dom/client';
 import { App } from './App';
 import { store } from './app-redux/store';
 import './index.css';
-import { setEnv } from './environments/environment';
+import { initEnv } from './config/environment';
 import reportWebVitals from './reportWebVitals';
 import * as serviceWorker from './serviceWorker';
 
-setEnv();
+initEnv();
 const container = document.getElementById('root');
 const root = createRoot(container as HTMLElement);
 

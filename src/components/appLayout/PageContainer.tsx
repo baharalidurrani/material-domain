@@ -1,7 +1,7 @@
 import React from 'react';
 import Grid from '@mui/material/Grid';
 import { makeStyles } from 'tss-react/mui';
-import { useAppBarHeight } from 'src/hooks/useToolbarHeight';
+import { useToolbarHeight } from 'src/hooks/useToolbarHeight';
 
 const useStyles = makeStyles<{ padding: number }>()((theme, { padding }) => ({
   main: {
@@ -25,7 +25,7 @@ export function PageContainer({ children, padding = 3 }: Props): React.ReactElem
       justifyContent="space-around"
       alignItems="center"
       className={classes.main}
-      style={{ minHeight: `calc(100vh - ${useAppBarHeight()}px)` }}
+      style={{ minHeight: `calc(100vh - ${useToolbarHeight()}px)` }}
     >
       {children}
     </Grid>

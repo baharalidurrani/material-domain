@@ -4,7 +4,7 @@ interface MinHeight {
   minHeight: number;
 }
 
-export function useAppBarHeight(): number {
+export function useToolbarHeight(): number {
   const {
     mixins: { toolbar },
     breakpoints,
