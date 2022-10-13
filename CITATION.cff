@@ -5,7 +5,7 @@ authors:
     name-particle: Durrani
     orcid: 'https://orcid.org/0000-0003-2750-4420'
 cff-version: '1.1.0'
-date-released: 2022-10-04
+date-released: 2022-10-13
 doi: '10.5281/zenodo.5600545'
 keywords:
   - react
@@ -17,6 +17,6 @@ keywords:
 license: 'GPL-3.0'
 message: 'If you use this software, please cite it using these metadata.'
 repository-code: 'https://github.com/baharalidurrani/material-domain'
-title: 'baharalidurrani/material-domain: v5.2.1'
+title: 'baharalidurrani/material-domain: v5.3.0'
 # Please Update the date-released too 👆
-version: 'v5.2.1'
+version: 'v5.3.0'
