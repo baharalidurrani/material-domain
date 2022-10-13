@@ -17,7 +17,7 @@ export function useToolbarHeight(): number {
   if (isDesktop) {
     currentToolbarMinHeight = toolbar[toolbarDesktopQuery];
   } else if (isLandscape) {
-    currentToolbarMinHeight = toolbar[toolbarLandscapeQuery] ?? { minHeight: 48 };
+    currentToolbarMinHeight = (toolbar[breakpoints.up('xs')] as any)[`@media (orientation: landscape)`];
   } else {
     currentToolbarMinHeight = toolbar;
   }
