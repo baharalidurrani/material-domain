@@ -1,6 +1,6 @@
 {
   "name": "material-domain",
-  "version": "5.5.0",
+  "version": "5.5.1",
   "private": true,
   "scripts": {
     "build": "react-scripts build",
@@ -34,9 +34,9 @@
   "dependencies": {
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
-    "@mui/icons-material": "^5.10.9",
-    "@mui/lab": "^5.0.0-alpha.107",
-    "@mui/material": "^5.10.13",
+    "@mui/icons-material": "^5.10.15",
+    "@mui/lab": "^5.0.0-alpha.109",
+    "@mui/material": "^5.10.15",
     "@reduxjs/toolkit": "^1.9.0",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -47,25 +47,25 @@
     "react-router-dom": "^6.4.3",
     "react-scripts": "^5.0.1",
     "tss-react": "^4.4.4",
-    "web-vitals": "^3.0.4"
+    "web-vitals": "^3.1.0"
   },
   "devDependencies": {
     "@types/node": "^18.11.9",
     "@types/react": "^18.0.25",
     "@types/react-dom": "^18.0.9",
     "@types/react-redux": "^7.1.24",
-    "@typescript-eslint/eslint-plugin": "^5.43.0",
-    "eslint": "^8.27.0",
+    "@typescript-eslint/eslint-plugin": "^5.44.0",
+    "eslint": "^8.28.0",
     "eslint-config-prettier": "^8.5.0",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.5.1",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-promise": "^6.1.1",
-    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react": "^7.31.11",
     "eslint-plugin-react-hooks": "^4.6.0",
-    "prettier": "^2.7.1",
-    "typescript": "^4.8.4"
+    "prettier": "^2.8.0",
+    "typescript": "^4.9.3"
   },
   "engines": {
     "node": ">= 18.5.0",
