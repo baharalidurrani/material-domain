@@ -5,7 +5,7 @@ export enum ENV {
   PROD = 'PROD',
 }
 
-export const CONFIG: { [VARIABLE_NAME: string]: string } = {
+export const CONFIG: Record<string, string> = {
   REACT_APP_ENV: process.env.REACT_APP_ENV ?? ENV.LOCAL,
 
   REACT_APP_API_URL: process.env.REACT_APP_API_URL ?? 'http://127.0.0.1:2000',
