@@ -53,7 +53,9 @@ export function Counter() {
           label="Set increment amount"
           variant="outlined"
           value={incrementAmount}
-          onChange={(e) => setIncrementAmount(e.target.value)}
+          onChange={(e) => {
+            setIncrementAmount(e.target.value);
+          }}
         />
         <Button
           color="primary"
@@ -77,7 +79,9 @@ export function Counter() {
           color="primary"
           variant="outlined"
           size="large"
-          onClick={() => dispatch(incrementIfOdd(incrementValue))}
+          onClick={() => {
+            dispatch(incrementIfOdd(incrementValue));
+          }}
         >
           Add If Odd
         </Button>
