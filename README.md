@@ -6,8 +6,6 @@ Digital Object Identifier available for citation at:
 [![Production Build](https://github.com/baharalidurrani/material-domain/actions/workflows/firebase-hosting-merge.yml/badge.svg)](https://github.com/baharalidurrani/material-domain/actions?query=event%3Apush)
 [![Preview Build](https://github.com/baharalidurrani/material-domain/actions/workflows/firebase-hosting-pull-request.yml/badge.svg)](https://github.com/baharalidurrani/material-domain/actions?query=event%3Apull_request)
 
-<script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="durrani" data-color="#40DCA5" data-emoji=""  data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#ffffff" data-coffee-color="#FFDD00" ></script>
-
 ## Features included
 
 - Built using Typescript.
