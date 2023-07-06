@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '../store';
 import { setOpenDrawer, toggleMobileDrawer } from './actions/drawerActions';
 import { setThemeType } from './actions/setThemeType';
+import { type RootState } from '../store';
 
 export type ThemeType = null | 'light' | 'dark';
 

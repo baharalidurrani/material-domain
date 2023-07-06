@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { getToken } from 'src/common/utils/tokenManager.util';
-import { RootState } from '../store';
 import { handleLogin, logOutAction, loginAction, signUpAction } from './actions/authActions';
+import { type RootState } from '../store';
 
 export interface AuthState {
   TOKEN?: string;

@@ -1,7 +1,7 @@
 import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined';
 import InfoIcon from '@mui/icons-material/Info';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import { IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes';
 import { Counter, LongText } from './pages';
 import { PlaceholderModule } from './PlaceholderModule';
 

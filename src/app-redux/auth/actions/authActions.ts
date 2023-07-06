@@ -1,6 +1,6 @@
-import { createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
+import { createAsyncThunk, type PayloadAction } from '@reduxjs/toolkit';
 import { clearToken, setToken } from 'src/common/utils/tokenManager.util';
-import { AuthState } from '../authSlice';
+import { type AuthState } from '../authSlice';
 
 export const handleLogin = (state: AuthState, { payload }: PayloadAction<string>) => {
   state.status = 'idle';

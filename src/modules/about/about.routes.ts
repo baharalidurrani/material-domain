@@ -1,6 +1,6 @@
 import React from 'react';
 import InfoIcon from '@mui/icons-material/Info';
-import { IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes';
 
 const AboutModule = React.lazy(async () => await import('./AboutModule'));
 

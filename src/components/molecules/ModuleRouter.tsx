@@ -1,6 +1,6 @@
 import React from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
-import { IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes';
 
 interface Props {
   moduleRoute: IRoute;
