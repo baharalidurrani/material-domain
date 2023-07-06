@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link as RLink, Location, useLocation, useNavigate } from 'react-router-dom';
+import { Link as RLink, type Location, useLocation, useNavigate } from 'react-router-dom';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import LoadingButton from '@mui/lab/LoadingButton';
 import Avatar from '@mui/material/Avatar';

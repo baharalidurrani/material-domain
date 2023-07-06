@@ -1,5 +1,5 @@
 import GradeIcon from '@mui/icons-material/Grade';
-import { IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes';
 import { InterestsModule } from './InterestsModule';
 
 export const InterestsRoute: IRoute = {

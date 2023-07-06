@@ -1,5 +1,5 @@
 import { green, purple } from '@mui/material/colors';
-import { ThemeOptions } from '@mui/material/styles';
+import { type ThemeOptions } from '@mui/material/styles';
 
 const customTheme: ThemeOptions = {
   palette: {
