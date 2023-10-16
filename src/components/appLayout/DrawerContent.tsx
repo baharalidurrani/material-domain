@@ -2,10 +2,10 @@ import { useEffect, useState } from 'react';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 import ExpandLess from '@mui/icons-material/ExpandLess';
 import ExpandMore from '@mui/icons-material/ExpandMore';
-import { Grid } from '@mui/material';
 import Collapse from '@mui/material/Collapse';
+import Grid from '@mui/material/Grid';
 import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
+import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
 import Tooltip from '@mui/material/Tooltip';
@@ -56,8 +56,7 @@ export function DrawerContent() {
       <List>
         {ROUTES.map((route, i) => (
           <div key={i}>
-            <ListItem
-              button
+            <ListItemButton
               component={NavLink}
               to={route.path}
               selected={location.pathname === `/${route.path}`}
@@ -76,13 +75,12 @@ export function DrawerContent() {
                 <Typography>{route.title}</Typography>
               </ListItemText>
               {route.subRoutes?.length ? expand?.includes(route.path) ? <ExpandLess /> : <ExpandMore /> : ''}
-            </ListItem>
+            </ListItemButton>
             {route.subRoutes?.map((sub, j) => (
               <Collapse key={`${i},${j}`} in={expand?.includes(route.path)} timeout="auto" unmountOnExit>
                 <List component="div" disablePadding>
-                  <ListItem
+                  <ListItemButton
                     className={classes.nested}
-                    button
                     component={NavLink}
                     to={`${route.path}/${sub.path}`}
                     selected={location.pathname === `/${route.path}/${sub.path}`}
@@ -93,7 +91,7 @@ export function DrawerContent() {
                     <ListItemText>
                       <Typography variant="caption">{sub.title}</Typography>
                     </ListItemText>
-                  </ListItem>
+                  </ListItemButton>
                 </List>
               </Collapse>
             ))}
