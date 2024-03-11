@@ -37,7 +37,8 @@ jobs:
         run: npm ci --ignore-scripts
 
       - run: npm run build
-      - run: echo Commit $GITHUB_SHA on Branch $GITHUB_REF_NAME > build/build.txt
+      - run: |
+          echo "{\"commit\": \"https://github.com/baharalidurrani/material-domain/commit/${$GITHUB_SHA}\", \"ref\": \"${GITHUB_REF_NAME}\"}" > build/build.json
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
