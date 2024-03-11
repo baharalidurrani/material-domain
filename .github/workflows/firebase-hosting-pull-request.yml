@@ -38,7 +38,10 @@ jobs:
 
       - run: npm run build
       - run: |
-          echo "{\"commit\": \"https://github.com/baharalidurrani/material-domain/commit/${$GITHUB_SHA}\", \"ref\": \"${GITHUB_REF_NAME}\"}" > build/build.json
+          echo "{\"commit\": \"https://github.com/baharalidurrani/material-domain/commit/$GITHUB_SHA\", \"ref\": \"$GITHUB_REF_NAME\"}" > build/build.json
+      - run: echo $GITHUB_JOB
+      - run: echo $GITHUB_RUN_ID
+      - run: echo https://github.com/baharalidurrani/material-domain/actions/runs/$GITHUB_RUN_ID/job/$GITHUB_JOB
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
