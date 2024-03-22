@@ -9,8 +9,10 @@ export const handleLogin = (state: AuthState, { payload }: PayloadAction<string>
 
 export const loginAction = createAsyncThunk(
   '@@auth/loginAction',
-  // eslint-disable-next-line no-unused-vars, @typescript-eslint/no-unused-vars
-  async ({ email, password }: { email: string; password: string }, { dispatch }) => {
+  async (
+    { email, password }: { email: string; password: string },
+    // { dispatch },
+  ) => {
     // Mimic sleep function
     await new Promise((resolve) => setTimeout(resolve, 5000));
 
@@ -20,7 +22,7 @@ export const loginAction = createAsyncThunk(
     // void dispatch(setProfileAction('TOKEN.data'));
     setToken(TOKEN);
     return TOKEN;
-  }
+  },
 );
 
 interface ISignUp {
@@ -36,7 +38,7 @@ export const signUpAction = createAsyncThunk(
 
     setToken(success);
     return success;
-  }
+  },
 );
 
 export const logOutAction = createAsyncThunk('auth/logOutAction', () => {

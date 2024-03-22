@@ -1,5 +1,5 @@
 import Typography from '@mui/material/Typography';
-import { type INames } from 'src/common/typings/app';
+import { type INames } from 'src/common/typings/app.type';
 import { Atom } from '../atoms';
 
 interface Optionals {

@@ -17,6 +17,7 @@ export function useToolbarHeight(): number {
   if (isDesktop) {
     currentToolbarMinHeight = toolbar[toolbarDesktopQuery];
   } else if (isLandscape) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     currentToolbarMinHeight = (toolbar[breakpoints.up('xs')] as any)[`@media (orientation: landscape)`];
   } else {
     currentToolbarMinHeight = toolbar;

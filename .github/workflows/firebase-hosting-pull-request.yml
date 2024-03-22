@@ -12,7 +12,7 @@ on:
   workflow_dispatch:
 
 # env:
-#   REACT_APP_API_URL: "${{ secrets.REACT_APP_API_URL }}"
+#   VITE_APP_API_URL: "${{ secrets.VITE_APP_API_URL }}"
 
 jobs:
   build_and_preview:
@@ -30,15 +30,15 @@ jobs:
         uses: actions/cache@v2
         with:
           path: ./node_modules
-          key: modules-${{ hashFiles('package-lock.json') }}
+          key: modules-${{ hashFiles('yarn.lock') }}
 
       - name: Install dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci --ignore-scripts
+        run: yarn install --immutable --immutable-cache
 
-      - run: npm run build
+      - run: yarn build
       - run: |
-          echo "{\"commit\": \"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$GITHUB_SHA\", \"ref\": \"$GITHUB_REF_NAME\", \"action\": \"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\"}" > build/build.json
+          echo "{\"commit\": \"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/commit/$GITHUB_SHA\", \"ref\": \"$GITHUB_REF_NAME\", \"action\": \"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID\"}" > dist/build.json
 
       - uses: FirebaseExtended/action-hosting-deploy@v0
         with:

@@ -1,5 +1,5 @@
 import BuildIcon from '@mui/icons-material/Build';
-import { type IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes.type';
 import { SkillsModule } from './SkillsModule';
 
 export const SkillsRoute: IRoute = {

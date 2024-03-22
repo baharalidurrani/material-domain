@@ -3,13 +3,15 @@
 # dependencies
 node_modules
 /.pnp
-.pnp.js
 
 # testing
 /coverage
+.pnp.js
 
 # production
-/build
+dist
+dist-ssr
+/.firebase
 
 # misc
 .DS_Store
@@ -18,12 +20,20 @@ node_modules
 .env.test.local
 .env.production.local
 
+# Logs
+logs
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-/.firebase
+# ignore
+*.local
+*.local1
+*.local2
 
+# local
 cert
-
 .env

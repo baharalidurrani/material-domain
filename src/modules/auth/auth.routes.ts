@@ -1,7 +1,7 @@
 import LockIcon from '@mui/icons-material/Lock';
 import LoginIcon from '@mui/icons-material/Login';
 import NewReleasesIcon from '@mui/icons-material/NewReleases';
-import { type IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes.type';
 import { AuthModule } from './AuthModule';
 import { LoginPage, RegisterPage } from './pages';
 

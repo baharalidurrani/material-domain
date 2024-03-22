@@ -54,7 +54,6 @@ export function LoginPage() {
         <Typography component="h1" variant="h5">
           Sign in
         </Typography>
-        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <Box component="form" onSubmit={handleLogin} noValidate sx={{ mt: 1 }}>
           <TextField
             margin="normal"

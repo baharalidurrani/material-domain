@@ -54,7 +54,6 @@ export function RegisterPage() {
         <Typography component="h1" variant="h5">
           Sign up
         </Typography>
-        {/* eslint-disable-next-line @typescript-eslint/no-misused-promises */}
         <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={6}>
