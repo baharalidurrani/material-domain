@@ -44,9 +44,7 @@ const pwaOptions: Partial<VitePWAOptions> = {
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  // base: 'https://localhost:5173', // Dev
-  // base: 'https://localhost:4173', // Build
-  base: 'https://durrani.dev', // Prod
+  base: process.env.VITE_BASE_URL,
   // build: { sourcemap: false },
   plugins: [react(), mkcert(), VitePWA(pwaOptions)],
   // optimizeDeps: {
