@@ -2,7 +2,7 @@ import React from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { isLogin } from 'src/app-redux/auth/authSlice';
 import { useAppSelector } from 'src/app-redux/hooks';
-import { type IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes.type';
 
 interface Props {
   children: React.ReactNode;

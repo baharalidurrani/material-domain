@@ -1,5 +1,5 @@
 import HomeIcon from '@mui/icons-material/Home';
-import { type IRoute } from 'src/common/typings/routes';
+import { type IRoute } from 'src/common/typings/routes.type';
 import { HomeModule } from './HomeModule';
 
 export const HomeRoute: IRoute = {

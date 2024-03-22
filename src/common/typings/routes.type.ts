@@ -6,7 +6,7 @@ export interface IRoute {
   path: string;
   pathParam?: string;
   icon: OverridableComponent<SvgIconTypeMap<Record<string, unknown>, 'svg'>>;
-  component: ReactElement;
+  component: (() => React.ReactElement) | React.LazyExoticComponent<() => React.ReactElement>;
   guard?: boolean;
   subRoutes?: IRoute[];
 }
