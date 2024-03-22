@@ -11,9 +11,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
-# env:
-#   GENERATE_SOURCEMAP: false
-#   REACT_APP_ENV: 'PROD'
+env:
+  # GENERATE_SOURCEMAP: false
+  VITE_BASE_URL: 'https://durrani.dev'
 
 jobs:
   build_and_deploy:
